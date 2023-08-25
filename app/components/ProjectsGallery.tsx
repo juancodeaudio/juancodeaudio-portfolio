@@ -81,8 +81,8 @@ const ProjectsGallery = () => {
   }, [])
   
   return (
-    <section className="">
-      <div ref={gallery} className="h-[175vh] bg-dark relative flex gap-8 p-8 box-border overflow-hidden">
+    <section ref={gallery} className="">
+      <div className="h-[175vh] bg-dark relative flex gap-8 p-8 box-border overflow-hidden">
         <Column images={[images[0], images[1], images[2]]} y={y}/>
         <Column images={[images[3], images[4], images[5]]} y={y2}/>
         <Column images={[images[6], images[7], images[8]]} y={y3}/>

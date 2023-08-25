@@ -22,7 +22,7 @@ export default function Home() {
       <Landing />
       <div className='bg-light h-screen pt-24 flex justify-center'>Home</div>
       <ProjectsGallery />
-      <div className='bg-light h-96 pt-24 flex justify-center'>Home</div>
+      <div className='bg-light h-screen pt-24 flex justify-center'>Home</div>
     </main>
   )
 }
