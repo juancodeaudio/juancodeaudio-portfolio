@@ -1,17 +1,22 @@
 import Button from "../common/Button"
 import WidthLayout from "../common/WidthLayout"
+import Logo from "./Logo"
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-dark py-12 text-light text-sm">
-      <WidthLayout className="flex flex-col gap-12">
-        <div className="py-10 flex justify-between px-12 items-center border-t border-light/50">
+    <footer className="w-full bg-dark py-16 text-light text-sm">
+      <WidthLayout className="flex flex-col gap-16">
+        <div className="flex gap-12 px-24 mt-24">
+          <Logo />
+          <h2 className="opacity-50">SAY HELLO</h2>
+        </div>
+        <div className="py-10 mb-16 flex justify-between mx-40 px-4 items-center border-t border-light/50">
           <div className="flex flex-col gap-12">
-            <h3>alvaradovallejo.juan@gmail.com</h3>
-            <h3>+(571) 3043807406</h3>
+            <h3 className="underline">alvaradovallejo.juan@gmail.com</h3>
+            <h3 className="underline">+(57) 1 304 380 7406</h3>
           </div>
           <div>
-          <Button buttonColor="light" variant="flat" hoverColor="bg-primary">ASK ME</Button>
+          <Button buttonColor="light" variant="bordered" hoverColor="bg-primary">ASK ME</Button>
           </div>
         </div>
         <div className="flex justify-between">

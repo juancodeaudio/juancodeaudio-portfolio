@@ -16,6 +16,9 @@ const config: Config = {
         primary: "#0891b2",
         danger: "#be123c",
         error: "#be123c"
+      },
+      backgroundImage: {
+        'landing-bg': "url('/images/landing-bg.jpeg')",
       }
     },
   },
