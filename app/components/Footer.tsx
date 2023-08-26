@@ -12,17 +12,17 @@ const Footer = () => {
     target: container,
     offset: ["start end", "end end"]
   })
-  const y = useTransform(scrollYProgress, [0, 1], [-500, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [-600, 0]);
 
   return (
     <motion.footer ref={container} className="w-full bg-dark py-16 text-light text-sm overflow-hidden">
       <motion.div style={{y}}>
         <WidthLayout className="flex flex-col gap-16">
-          <div className="flex gap-12 px-24 mt-24">
+          <div className="flex gap-12 px-12 mt-24">
             <Logo />
             <h2 className="opacity-50">SAY HELLO</h2>
           </div>
-          <div className="py-10 mb-16 flex justify-between mx-40 px-4 items-center border-t border-light/50">
+          <div className="py-10 mb-16 flex justify-between mx-28 px-4 items-center border-t border-light/50">
             <div className="flex flex-col gap-12">
               <h3 className="underline">alvaradovallejo.juan@gmail.com</h3>
               <h3 className="underline">+(57) 1 304 380 7406</h3>

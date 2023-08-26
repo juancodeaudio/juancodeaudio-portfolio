@@ -61,10 +61,10 @@ const ProjectsGallery = () => {
   })
 
   const { height } = dimension;
-  const y = useTransform(scrollYProgress, [0, 1], [0, height * 2])
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.3])
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25])
-  const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3])
+  const y = useTransform(scrollYProgress, [0, 1], [0, height * 2.15])
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 4])
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.50])
+  const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3.5])
 
   useEffect( () => {
 
@@ -82,7 +82,7 @@ const ProjectsGallery = () => {
   
   return (
     <section ref={gallery} className="">
-      <div className="h-[175vh] bg-dark relative flex gap-8 p-8 box-border overflow-hidden">
+      <div className="h-[220vh] bg-dark relative flex gap-8 p-16 box-border overflow-hidden">
         <Column images={[images[0], images[1], images[2]]} y={y}/>
         <Column images={[images[3], images[4], images[5]]} y={y2}/>
         <Column images={[images[6], images[7], images[8]]} y={y3}/>

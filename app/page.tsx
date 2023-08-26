@@ -1,7 +1,9 @@
 'use client'
 import { useEffect } from 'react'
 import Landing from './components/Landing'
+import DescriptionLanding from './components/DescriptionLanding'
 import ProjectsGallery from './components/ProjectsGallery'
+import Button from './common/Button'
 import Lenis from '@studio-freight/lenis'
 
 export default function Home() {
@@ -20,9 +22,11 @@ export default function Home() {
   return (
     <main>
       <Landing />
-      <div className='bg-light h-screen pt-24 flex justify-center'>Home</div>
+      <DescriptionLanding />
       <ProjectsGallery />
-      <div className='bg-light h-screen pt-24 flex justify-center'>Home</div>
+      <div className='bg-light py-24 flex justify-center'>
+        <Button variant="bordered" hoverColor='bg-dark'>Look for more projects</Button>
+      </div>
     </main>
   )
 }
