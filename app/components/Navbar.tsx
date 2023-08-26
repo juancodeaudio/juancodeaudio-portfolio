@@ -1,10 +1,11 @@
 'use client'
+import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import WidthLayout from '../common/WidthLayout'
 import Logo from './Logo'
 
-import { motion } from 'framer-motion'
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 
 const links = [
   { href: "/", label: "Home," },
@@ -16,8 +17,35 @@ const Navbar = () => {
 
   const path = usePathname();
 
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
+
+  function update() {
+    if (scrollY?.getVelocity() < 0) {
+      setHidden(false);
+    } else if (scrollY?.get() < 2 || scrollY?.getVelocity() > 0) {
+      setHidden(true);
+    }
+  }
+
+  useMotionValueEvent(scrollY, "change", () => {
+    update();
+  })
+
+  const headerVariants = {
+    initial: { y: -96 },
+    visible: { y: 0 },
+    hidden: { y: -96 }
+  };
+
   return (
-    <header className='fixed top-0 h-24 py-4 backdrop-blur-md w-full'>
+    <motion.header
+      className='fixed top-0 left-0 h-24 py-4 backdrop-blur-md bg-light/20 w-full z-[9999]'
+      variants={headerVariants}
+      initial="initial"
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
+    >
       <WidthLayout>
         <div className='flex items-center justify-between'>
           <nav className='flex group items-center justify-center gap-2'>
@@ -39,7 +67,7 @@ const Navbar = () => {
           </nav>
         </div>
       </WidthLayout>
-    </header>
+    </motion.header>
   )
 }
 
