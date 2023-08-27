@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link";
 import { VariantProps, cva } from "class-variance-authority";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
@@ -8,6 +9,7 @@ interface ButtonProps
   VariantProps<typeof button> {
     children: React.ReactNode;
     hoverColor: string;
+    href: string;
 }
 
 const button = cva("w-64 h-16 rounded-md relative overflow-hidden", {
@@ -62,7 +64,7 @@ const button = cva("w-64 h-16 rounded-md relative overflow-hidden", {
   }
 });
 
-const Button = ({ children, buttonColor, variant, disabled, hoverColor }: ButtonProps) => {
+const Button = ({ children, href, buttonColor, variant, disabled, hoverColor }: ButtonProps) => {
   
   const parent = {
     variantA: { scale: 1 },
@@ -80,20 +82,22 @@ const Button = ({ children, buttonColor, variant, disabled, hoverColor }: Button
   }
 
   return (
-    <motion.button 
-      className={twMerge(button({buttonColor, variant, disabled}))}
-      variants={parent}
-      initial="variantA"
-      whileHover="variantB"
-      transition={{ type: "spring", stiffness: 400, damping: 10 }}
-    >
-      <motion.div
-        className={`${hoverColor} absolute left-[-15px] w-72 h-48 rounded-full`}
-        variants={childBG} 
-        transition={{duration: 0.4}}
-      ></motion.div>
-      <motion.p variants={childTX}>{children}</motion.p>
-    </motion.button>
+    <Link href={href}>
+      <motion.button 
+        className={twMerge(button({buttonColor, variant, disabled}))}
+        variants={parent}
+        initial="variantA"
+        whileHover="variantB"
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      >
+        <motion.div
+          className={`${hoverColor} absolute left-[-15px] w-72 h-48 rounded-full`}
+          variants={childBG} 
+          transition={{duration: 0.4}}
+        ></motion.div>
+        <motion.p variants={childTX}>{children}</motion.p>
+      </motion.button>
+    </Link>
   )
 }
 

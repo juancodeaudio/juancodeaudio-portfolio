@@ -28,7 +28,7 @@ const Footer = () => {
               <h3 className="underline">+(57) 1 304 380 7406</h3>
             </div>
             <div>
-            <Button buttonColor="light" variant="bordered" hoverColor="bg-primary">ASK ME</Button>
+            <Button href='/contact' buttonColor="light" variant="bordered" hoverColor="bg-primary">ASK ME</Button>
             </div>
           </div>
           <div className="flex justify-between">

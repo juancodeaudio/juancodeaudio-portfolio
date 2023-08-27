@@ -23,26 +23,51 @@ interface Props {
   y: MotionValue<number>
 }
 
+const columnVariants = {
+  initial: {},
+  animate: {
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.2,
+    }
+  }
+}
+const imageVariants = {
+  initial: {
+    scale: 1.1
+  },
+  animate: {
+    scale: 1,
+    transition: { duration: 1}
+  }
+}
+
 const Column: React.FC<Props> = ({images, y=0}) => {
   return (
     <motion.div 
       className="relative h-full w-1/4 flex flex-col gap-4
       odd:top-[-45%] even:top-[-95%] last:top-[-75%]"
-      style={{y}}
+      style={{ y }}
+      variants={columnVariants}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
       >
       {
         images.map( (src, i) => {
           return (
-          <div 
+          <motion.div 
             key={i} 
-            className="h-full w-full relative rounded-2xl overflow-hidden">
+            className="h-full w-full relative rounded-2xl overflow-hidden"
+            variants={imageVariants}
+          >
             <Image 
               className='object-cover'
               src={`/images/${src}`}
               alt='image'
               fill
             />
-          </div>
+          </motion.div>
           )
         })
       }
@@ -54,12 +79,10 @@ const ProjectsGallery = () => {
 
   const gallery = useRef(null)
   const [dimension, setDimension] = useState({width:0, height:0});
-
   const { scrollYProgress } = useScroll({
     target: gallery,
     offset: ['start end', 'end start']
   })
-
   const { height } = dimension;
   const y = useTransform(scrollYProgress, [0, 1], [0, height * 2.15])
   const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 4])
@@ -67,11 +90,9 @@ const ProjectsGallery = () => {
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3.5])
 
   useEffect( () => {
-
     const resize = () => {
       setDimension({width: window.innerWidth, height: window.innerHeight})
     }
-
     window.addEventListener("resize", resize)
     resize();
 

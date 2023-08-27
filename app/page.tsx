@@ -25,7 +25,7 @@ export default function Home() {
       <DescriptionLanding />
       <ProjectsGallery />
       <div className='bg-light py-24 flex justify-center'>
-        <Button variant="bordered" hoverColor='bg-dark'>Look for more projects</Button>
+        <Button href='/' variant="bordered" hoverColor='bg-dark'>Look for more projects</Button>
       </div>
     </main>
   )

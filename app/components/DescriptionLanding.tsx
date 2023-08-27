@@ -18,7 +18,7 @@ const DescriptionLanding = () => {
         PASSIONATE ABOUT WORKING AT THE INTERSECTION OF CREATIVITY AND CUTTING EDGE TECHNOLOGY
       </h3>
       <div className="col-start-9 col-span-4 row-start-4 justify-end flex flex-col">
-        <Button hoverColor="bg-primary">
+        <Button href='/about' hoverColor="bg-primary">
           ABOUT ME
         </Button>
       </div>

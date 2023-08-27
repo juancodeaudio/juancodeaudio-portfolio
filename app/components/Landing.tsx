@@ -11,7 +11,7 @@ const Landing = () => {
         <div className="h-full pt-24 flex flex-col justify-center gap-12">
           <h1 className="w-7/12">JUAN PABLO ALVARADO</h1>
           <TextSlider />
-          <Button buttonColor="dark" hoverColor="bg-primary">CONTACT ME</Button>
+          <Button href='/contact' buttonColor="dark" hoverColor="bg-primary">CONTACT ME</Button>
           <div className='absolute right-40 h-full top-0 overflow-hidden flex'>
             <Image 
               className='object-cover'
