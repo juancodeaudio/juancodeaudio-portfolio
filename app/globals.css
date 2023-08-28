@@ -5,6 +5,7 @@
 @layer base {
   h1 {
     @apply text-9xl;
+    @apply uppercase;
   }
   h2 {
     @apply text-7xl;

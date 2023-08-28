@@ -4,6 +4,7 @@ import Button from "../common/Button"
 import WidthLayout from "../common/WidthLayout"
 import Logo from "./Logo"
 import { useTransform, useScroll, motion } from "framer-motion"
+import { Title2 } from "../common/TextStyles"
 
 const Footer = () => {
 
@@ -20,7 +21,11 @@ const Footer = () => {
         <WidthLayout className="flex flex-col gap-16">
           <div className="flex gap-12 px-12 mt-24">
             <Logo />
-            <h2 className="opacity-50">SAY HELLO</h2>
+            <Title2 
+              text="SAY HELLO"
+              className="opacity-50"
+            />
+            {/* <h2 className="opacity-50">SAY HELLO</h2> */}
           </div>
           <div className="py-10 mb-16 flex justify-between mx-28 px-4 items-center border-t border-light/50">
             <div className="flex flex-col gap-12">

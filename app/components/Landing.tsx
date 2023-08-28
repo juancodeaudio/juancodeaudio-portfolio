@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Title } from '../common/TextStyles';
 import Button from "../common/Button"
 import WidthLayout from "../common/WidthLayout"
 import TextSlider from "./TextSlider"
@@ -9,7 +10,17 @@ const Landing = () => {
       {/* bg-gray-300 */}
       <WidthLayout>
         <div className="h-full pt-24 flex flex-col justify-center gap-12">
-          <h1 className="w-7/12">JUAN PABLO ALVARADO</h1>
+          <div className='w-7/12'>
+            <Title 
+              text='Juan'
+            />
+            <Title 
+              text='Pablo'
+            />
+            <Title 
+              text='Alvarado'
+            />
+          </div>
           <TextSlider />
           <Button href='/contact' buttonColor="dark" hoverColor="bg-primary">CONTACT ME</Button>
           <div className='absolute right-40 h-full top-0 overflow-hidden flex'>
