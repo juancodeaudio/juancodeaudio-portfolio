@@ -11,7 +11,7 @@ const DescriptionLanding = () => {
     offset: ["start end", "end start"]
   });
   const y = useTransform(scrollYProgress, [0, 1], [-90, 90])
-  const y2 = useTransform(scrollYProgress, [0, 1], [-60, 60])
+  const y2 = useTransform(scrollYProgress, [0, 1], [60, -60])
   
   return (
     <section ref={ref} className='bg-background grid grid-cols-12 auto-rows-fr grid-rows-12 gap-6 py-32 max-w-8xl m-auto px-10'>

@@ -95,7 +95,7 @@ const Button = ({ children, href, buttonColor, variant, disabled, hoverColor }: 
           delay: 0.4,
           duration: 1
         }}
-        viewport={{ once: true }}
+        // viewport={{ once: true }}
       >
         <motion.div
           className={`${hoverColor} absolute left-[-15px] w-72 h-48 rounded-full`}

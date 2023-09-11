@@ -16,11 +16,12 @@ const Footer = () => {
   const y = useTransform(scrollYProgress, [0, 1], [-600, 0]);
 
   return (
-    <motion.footer ref={container} className="w-full h-[800px] xl:h-screen bg-black py-16 text-light text-sm overflow-hidden">
+    <motion.footer ref={container} className="w-full h-screen bg-black py-16 text-light text-sm overflow-hidden">
       <motion.div
         style={{y}}
+        className="h-full"
       >
-        <WidthLayout className="flex flex-col gap-16">
+        <WidthLayout className="flex flex-col justify-between">
           <div className="flex gap-12 px-12 mt-24">
             <Logo />
             <Title2 
