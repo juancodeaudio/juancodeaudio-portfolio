@@ -1,9 +1,10 @@
 'use client'
-import { motion } from 'framer-motion'
+import { motion, MotionValue } from 'framer-motion'
 
 type TitleProps = {
   text: string;
   className?: string;
+  y?: MotionValue;
 }
 type ParagraphProps = {
   children: React.ReactNode;
@@ -18,31 +19,31 @@ function splitSentences(text: string) {
   const chars = splittedWords.map(
     (char) => (char.split(""))
   );
-
-  // console.log("Spaced: ", splittedWords)
-  // console.log("Letters: ", chars)
-
   return { splittedWords, chars };
 }
 
-export const Title = ({text, className}: TitleProps) => {
+export const Title: React.FC<TitleProps>  = ({text, className}) => {
 
   const titleVariants = {
     initial: {},
-    animate: {}
+    animate: {
+      transition: {
+        delay: 1
+      }
+    }
   }
   const wordVariants = {
     initial: {},
     animate: {
       transition: {
         delayChildren: 0.4,
-        staggerChildren: 0.1,
+        staggerChildren: 0.05,
       }
     }
   }
   const charVariants = {
     initial: {
-      y:110
+      y:260,
     },
     animate: {
       y: 0,
@@ -57,7 +58,7 @@ export const Title = ({text, className}: TitleProps) => {
     <motion.h1
       aria-label={text}
       role='heading'
-      className={`overflow-hidden ${className}`}
+      className={`${className}`}
       variants={titleVariants}
       initial='initial'
       whileInView='animate'
@@ -65,14 +66,14 @@ export const Title = ({text, className}: TitleProps) => {
       {text.split(" ").map((word, i) => (
         <motion.span
           key={i}
-          className='inline-block mr-5 whitespace-nowrap'
+          className='inline-block mr-5 whitespace-nowrap overflow-hidden'
           aria-hidden="true"
           variants={wordVariants}
         >
           {word.split("").map((char, j) => (
             <motion.span
               key={j}
-              className='inline-block'
+              className='inline-block pt-9 pb-12'
               aria-hidden="true"
               variants={charVariants}
             >
@@ -85,7 +86,7 @@ export const Title = ({text, className}: TitleProps) => {
   )
 }
 
-export const Title2 = ({text, className}: TitleProps) => {
+export const Title2: React.FC<TitleProps> = ({text, className, y=0}) => {
 
   const titleVariants = {
     initial: {},
@@ -110,11 +111,12 @@ export const Title2 = ({text, className}: TitleProps) => {
     <motion.h2
       aria-label={text}
       role='heading'
+      style={{ y }}
       className={className}
       variants={titleVariants}
       initial='initial'
       whileInView='animate'
-      // viewport={{ once: true }}
+      viewport={{ once: true }}
     >
       {splittedWords.map((word, i) => (
         <span
@@ -135,7 +137,7 @@ export const Title2 = ({text, className}: TitleProps) => {
   )
 }
 
-export const Title3 = ({text, className}: TitleProps) => {
+export const Title3: React.FC<TitleProps> = ({text, className, y=0}) => {
 
   const titleVariants = {
     initial: {},
@@ -160,6 +162,7 @@ export const Title3 = ({text, className}: TitleProps) => {
     <motion.h3
       aria-label={text}
       role='heading'
+      style={{ y }}
       className={className}
       variants={titleVariants}
       initial='initial'
@@ -214,54 +217,3 @@ export const Paragraph = ({children, className}: ParagraphProps) => {
     </motion.p>
   )
 }
-
-export const AnimatedCharacters = ({text, className}: TitleProps) => {
-  // Framer Motion variant object, for controlling animation
-  const item = {
-    hidden: {
-      y: "200%",
-    },
-    visible: {
-      y: 0,
-      transition: {
-        ease: [0.6, 0.01, -0.05, 0.95],
-        duration: 1
-      }
-    }
-  };
-
-  const {splittedWords, chars} = splitSentences(text);
-
-  return (
-    <h3 className={className}>
-      {chars.map((word, index) => {
-        return (
-          // Wrap each word in the Wrapper component
-          <span className='whitespace-nowrap' key={index}>
-            {chars[index].flat().map((element, index) => {
-              return (
-                <span
-                  style={{
-                    overflow: "hidden",
-                    display: "inline-block"
-                  }}
-                  key={index}
-                >
-                  <motion.span
-                    style={{ display: "inline-block" }}
-                    variants={item}
-                    initial='hidden'
-                    whileInView='visible'
-                  >
-                    {element}
-                  </motion.span>
-                </span>
-              );
-            })}
-          </span>
-        );
-      })}
-      {/* {} */}
-    </h3>
-  );
-};

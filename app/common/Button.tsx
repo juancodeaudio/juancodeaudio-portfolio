@@ -12,7 +12,7 @@ interface ButtonProps
     href: string;
 }
 
-const button = cva("w-64 h-16 rounded-md relative overflow-hidden", {
+const button = cva("w-64 h-16 relative overflow-hidden", {
   variants: {
     buttonColor: {
       dark: "bg-dark text-light border-dark",
@@ -67,7 +67,8 @@ const button = cva("w-64 h-16 rounded-md relative overflow-hidden", {
 const Button = ({ children, href, buttonColor, variant, disabled, hoverColor }: ButtonProps) => {
   
   const parent = {
-    variantA: { scale: 1 },
+    variantA: { scale: 1, x: -50, opacity: 0 },
+    animate: { x: 0, opacity: 1 },
     variantB: { scale: 1.05 },
   }
 
@@ -87,8 +88,14 @@ const Button = ({ children, href, buttonColor, variant, disabled, hoverColor }: 
         className={twMerge(button({buttonColor, variant, disabled}))}
         variants={parent}
         initial="variantA"
+        whileInView="animate"
         whileHover="variantB"
-        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        transition={{
+          ease: 'easeOut',
+          delay: 0.4,
+          duration: 1
+        }}
+        viewport={{ once: true }}
       >
         <motion.div
           className={`${hoverColor} absolute left-[-15px] w-72 h-48 rounded-full`}

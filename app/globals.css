@@ -3,18 +3,23 @@
 @tailwind utilities;
 
 @layer base {
+  main {
+    @apply bg-background text-foreground;
+  }
   h1 {
-    @apply text-9xl;
-    @apply uppercase;
+    @apply text-[280px] leading-[0.6] uppercase font-neima text-background;
+    text-shadow: #f5f5f5 1px 0px 0px, #f5f5f5 0.540302px 0.841471px 0px, #f5f5f5 -0.416147px 0.909297px 0px, #f5f5f5 -0.989992px 0.14112px 0px, #f5f5f5 -0.653644px -0.756802px 0px, #f5f5f5 0.283662px -0.958924px 0px, #f5f5f5 0.96017px -0.279415px 0px;
   }
   h2 {
-    @apply text-7xl;
-    @apply tracking-tighter;
+    @apply text-7xl tracking-tighter;
   }
   h3 {
     @apply text-5xl;
   }
   h4 {
     @apply text-4xl;
+  }
+  p {
+    @apply text-xl font-thin;
   }
 }

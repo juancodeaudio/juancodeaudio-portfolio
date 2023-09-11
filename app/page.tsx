@@ -6,6 +6,21 @@ import ProjectsGallery from './components/ProjectsGallery'
 import Button from './common/Button'
 import Lenis from '@studio-freight/lenis'
 
+const imageList = [
+  "1.jpg",
+  "2.jpg",
+  "3.jpg",
+  "4.jpg",
+  "5.jpg",
+  "6.jpg",
+  "7.jpg",
+  "8.jpg",
+  "9.jpg",
+  "10.jpg",
+  "11.jpg",
+  "12.jpg",
+]
+
 export default function Home() {
 
   useEffect(() => {
@@ -20,12 +35,12 @@ export default function Home() {
   }, [])
 
   return (
-    <main>
+    <main className='overflow-hidden'>
       <Landing />
       <DescriptionLanding />
-      <ProjectsGallery />
-      <div className='bg-light py-24 flex justify-center'>
-        <Button href='/' variant="bordered" hoverColor='bg-dark'>Look for more projects</Button>
+      <ProjectsGallery imageSize='lg' images={imageList} />
+      <div className='bg-background py-24 flex justify-center'>
+        <Button href='/' buttonColor="light" variant="bordered" hoverColor='bg-primary'>Look for more projects</Button>
       </div>
     </main>
   )

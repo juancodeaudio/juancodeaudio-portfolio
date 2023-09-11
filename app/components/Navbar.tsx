@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import WidthLayout from '../common/WidthLayout'
 import Logo from './Logo'
+import ThemeButton from './ThemeButton'
 
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 
@@ -40,7 +41,7 @@ const Navbar = () => {
 
   return (
     <motion.header
-      className='fixed top-0 left-0 h-24 py-4 backdrop-blur-md bg-light/20 w-full z-[9999]'
+      className='fixed top-0 left-0 h-24 py-4 backdrop-blur-lg bg-black/30 w-full z-[9999] shadow-lg'
       variants={headerVariants}
       initial="initial"
       animate={hidden ? "hidden" : "visible"}
@@ -59,11 +60,12 @@ const Navbar = () => {
             {links.map((link) => (
                 <Link key={link.href} className='relative my-[16px] hover:opacity-50 transition-all' href={link.href}>
                   {link.href === path && (
-                    <motion.span layoutId='underline' className='absolute top-full block h-1 w-2 bg-dark mt-1' />
+                    <motion.span layoutId='underline' className='absolute top-full block h-1 w-2 bg-foreground mt-1' />
                   )}
                   {link.label}
                 </Link>
             ))}
+            <ThemeButton />
           </nav>
         </div>
       </WidthLayout>

@@ -2,25 +2,18 @@
 import Image from 'next/image';
 import { useTransform, useScroll, motion, MotionValue } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
+import { twJoin, twMerge } from 'tailwind-merge';
 
-const images = [
-  "1.jpg",
-  "2.jpg",
-  "3.jpg",
-  "4.jpg",
-  "5.jpg",
-  "6.jpg",
-  "7.jpg",
-  "8.jpg",
-  "9.jpg",
-  "10.jpg",
-  "11.jpg",
-  "12.jpg",
-]
-
-interface Props {
+interface columnProps {
   images: string[],
-  y: MotionValue<number>
+  y: MotionValue<number>,
+  imageSize: 'lg' | 'sm',
+  className?: string
+}
+
+interface galleryProps {
+  images: string[],
+  imageSize: 'lg' | 'sm'
 }
 
 const columnVariants = {
@@ -42,11 +35,18 @@ const imageVariants = {
   }
 }
 
-const Column: React.FC<Props> = ({images, y=0}) => {
+const Column: React.FC<columnProps> = ({images, imageSize, y=0, className}) => {
   return (
     <motion.div 
-      className="relative h-full w-1/4 flex flex-col gap-4
-      odd:top-[-45%] even:top-[-95%] last:top-[-75%]"
+      className={twJoin(
+        'relative h-full flex flex-col gap-4 odd:top-[-45%] even:top-[-95%] last:top-[-85%]',
+        className,
+        imageSize === 'lg' ? 'w-1/2 lg:w-1/3' : 'w-1/4',
+      )}
+      // className={`${
+      //   imageSize === 'lg' ? 'w-1/3' : 'w-1/4'
+      // } relative h-full flex flex-col gap-4
+      // odd:top-[-45%] even:top-[-95%] last:top-[-85%]`}
       style={{ y }}
       variants={columnVariants}
       initial="initial"
@@ -58,11 +58,12 @@ const Column: React.FC<Props> = ({images, y=0}) => {
           return (
           <motion.div 
             key={i} 
-            className="h-full w-full relative rounded-2xl overflow-hidden"
+            className={`h-full w-full relative ${imageSize === 'lg' ? 'rounded-md' : 'rounded-2xl'} overflow-hidden`}
             variants={imageVariants}
           >
             <Image 
-              className='object-cover'
+              className='object-cover hover:scale-110 transition duration-500 cursor-pointer bg-background'
+              // src={``}
               src={`/images/${src}`}
               alt='image'
               fill
@@ -75,7 +76,7 @@ const Column: React.FC<Props> = ({images, y=0}) => {
   )
 }
 
-const ProjectsGallery = () => {
+const ProjectsGallery: React.FC<galleryProps> = ({ imageSize, images }) => {
 
   const gallery = useRef(null)
   const [dimension, setDimension] = useState({width:0, height:0});
@@ -84,9 +85,9 @@ const ProjectsGallery = () => {
     offset: ['start end', 'end start']
   })
   const { height } = dimension;
-  const y = useTransform(scrollYProgress, [0, 1], [0, height * 2.15])
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 4])
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.50])
+  const y = useTransform(scrollYProgress, [0, 1], [0, height * 1.9])
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.45])
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.35])
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3.5])
 
   useEffect( () => {
@@ -102,12 +103,24 @@ const ProjectsGallery = () => {
   }, [])
   
   return (
-    <section ref={gallery} className="">
-      <div className="h-[220vh] bg-dark relative flex gap-8 p-16 box-border overflow-hidden">
-        <Column images={[images[0], images[1], images[2]]} y={y}/>
-        <Column images={[images[3], images[4], images[5]]} y={y2}/>
-        <Column images={[images[6], images[7], images[8]]} y={y3}/>
-        <Column images={[images[9], images[10], images[11]]} y={y4}/>
+    <section ref={gallery} className='flex m-auto'>
+      <div className={`h-[190vh] ${imageSize === 'lg' ? 'px-5' : 'px-16'} w-full  bg-foreground relative flex gap-5 py-16 overflow-hidden`}>
+        {
+          imageSize === 'lg' ? (
+            <>
+              <Column imageSize={imageSize} images={[images[0], images[1], images[2], images[3]]} y={y}/>
+              <Column imageSize={imageSize} images={[images[4], images[5], images[6], images[7]]} y={y2}/>
+              <Column className='hidden lg:flex' imageSize={imageSize} images={[images[8], images[9], images[10], images[11]]} y={y3}/>
+            </>
+          ) : (
+            <>
+              <Column imageSize={imageSize} images={[images[0], images[1], images[2]]} y={y}/>
+              <Column imageSize={imageSize} images={[images[3], images[4], images[5]]} y={y2}/>
+              <Column imageSize={imageSize} images={[images[6], images[7], images[8]]} y={y3}/>
+              <Column imageSize={imageSize} images={[images[9], images[10], images[11]]} y={y4}/>
+            </>
+          )
+        }
       </div>
     </section>
   )

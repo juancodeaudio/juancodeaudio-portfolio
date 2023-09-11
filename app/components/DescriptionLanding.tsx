@@ -1,32 +1,43 @@
+import { useRef } from "react"
 import Button from "../common/Button"
-import { Paragraph, Title2, Title3, AnimatedCharacters } from "../common/TextStyles"
+import { Paragraph, Title3 } from "../common/TextStyles"
+import { motion, useScroll, useTransform } from "framer-motion";
 
 
 const DescriptionLanding = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [-90, 90])
+  const y2 = useTransform(scrollYProgress, [0, 1], [-60, 60])
   
   return (
-    <section className='bg-light grid grid-cols-12 grid-rows-6 gap-6 py-32 max-w-8xl m-auto px-10'>
+    <section ref={ref} className='bg-background grid grid-cols-12 auto-rows-fr grid-rows-12 gap-6 py-32 max-w-8xl m-auto px-10'>
       <Title3 
+        y={y}
         text="EACH PROJECT IS AN OPPORTUNITY TO EVOLVE TECHNOLOGY AND CREATE NEW IMPOSSIBLE THINGS"
-        className="col-start-2 col-span-6 row-start-1 row-span-4 text-right font-medium"
+        className="col-start-2 col-span-6 row-start-1 row-span-3 text-right font-medium"
       />
-      <div className="col-start-2 col-span-6 row-start-5 row-span-2 justify-end flex flex-col gap-8">
+      <motion.div style={{y}} className="col-start-2 col-span-6 row-start-6 row-span-2 justify-end flex flex-col gap-8">
         <Paragraph className="text-right">
           The combination of my passion for technology, arts and design creates a unique profile in the software development field. When I’m not creating beautiful software experiences, you can find me learning new things like languages, video or audio production or even cooking.
         </Paragraph>
         <Paragraph className="text-right">
-        Anyways you can always <a href="/">CONTACT ME</a>.
+          Anyways you can always <a href="/">CONTACT ME</a>.
         </Paragraph>
-      </div>
+      </motion.div>
       <Title3 
+        y={y2}
         text="PASSIONATE ABOUT WORKING AT THE INTERSECTION OF CREATIVITY AND CUTTING EDGE TECHNOLOGY"
-        className="col-start-9 col-span-4 row-start-1 row-span-5"
+        className="col-start-9 col-span-4 row-start-3 row-span-4"
       />
-      <div className="col-start-9 col-span-4 row-start-6 justify-end flex flex-col">
-        <Button href='/about' hoverColor="bg-primary">
+      <motion.div style={{ y: y2 }} className="col-start-9 col-span-4 row-start-7 row-span-1 justify-end flex flex-col">
+        <Button href='/about' buttonColor="light" hoverColor="bg-primary">
           ABOUT ME
         </Button>
-      </div>
+      </motion.div>
     </section>
   )
 }
