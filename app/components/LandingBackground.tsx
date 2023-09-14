@@ -31,12 +31,12 @@ const LandingBackground = () => {
         }}
       >
         <motion.div className="w-full h-full" style={{y:y}}>
-          <Image 
+          {/* <Image 
                 className='object-cover'
                 fill
                 src="/images/landing-photo-2.png"
                 alt='picture of Juan Pablo Alvarado'
-              />
+              /> */}
         </motion.div>
       </motion.div>
       <motion.div

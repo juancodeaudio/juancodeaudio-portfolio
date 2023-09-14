@@ -5,6 +5,7 @@ import DescriptionLanding from './components/DescriptionLanding'
 import ProjectsGallery from './components/ProjectsGallery'
 import Button from './common/Button'
 import Lenis from '@studio-freight/lenis'
+import WidthLayout from './common/WidthLayout'
 
 const imageList = [
   "1.jpg",
@@ -36,12 +37,14 @@ export default function Home() {
 
   return (
     <main className='overflow-hidden'>
-      <Landing />
-      <DescriptionLanding />
-      <ProjectsGallery imageSize='lg' images={imageList} />
-      <div className='bg-background py-24 flex justify-center'>
-        <Button href='/' buttonColor="light" variant="bordered" hoverColor='bg-primary'>Look for more projects</Button>
-      </div>
+      <WidthLayout>  
+        <Landing />
+        <DescriptionLanding />
+        <ProjectsGallery imageSize='lg' images={imageList} />
+        <div className='bg-background py-24 flex justify-center'>
+          <Button href='/' buttonColor="light" variant="bordered" hoverColor='bg-primary'>Look for more projects</Button>
+        </div>
+      </WidthLayout>
     </main>
   )
 }

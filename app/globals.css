@@ -22,4 +22,7 @@
   p {
     @apply text-xl font-thin;
   }
+  input {
+    @apply h-28 bg-transparent border-b focus:outline-none focus:border-primary focus:border-b-2;
+  }
 }

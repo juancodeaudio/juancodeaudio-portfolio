@@ -19,15 +19,6 @@ const Landing = () => {
           {/* lg:w-7/12 */}
           <TextSlider />
           <Button href='/contact' buttonColor="light" hoverColor="bg-primary">CONTACT ME</Button>
-          {/* <div className='absolute right-40 h-full top-0 overflow-hidden flex'>
-            <Image 
-              className='object-cover'
-              width={650}
-              height={400}
-              src="/images/landing-photo.png"
-              alt='picture of Juan Pablo Alvarado'
-            />
-          </div> */}
         </div>
       </WidthLayout>
     </section>

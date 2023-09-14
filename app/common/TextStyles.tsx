@@ -116,7 +116,10 @@ export const Title2: React.FC<TitleProps> = ({text, className, y=0}) => {
       variants={titleVariants}
       initial='initial'
       whileInView='animate'
-      viewport={{ once: true }}
+      viewport={{
+        margin: '0px 0px -30% 0px',
+        once: true
+      }}
     >
       {splittedWords.map((word, i) => (
         <span
@@ -167,7 +170,10 @@ export const Title3: React.FC<TitleProps> = ({text, className, y=0}) => {
       variants={titleVariants}
       initial='initial'
       whileInView='animate'
-      viewport={{ once: true }}
+      viewport={{
+        margin: '0px 0px -30% 0px',
+        once: true
+      }}
     >
       {splittedWords.map((word, i) => (
         <span
@@ -211,7 +217,10 @@ export const Paragraph = ({children, className}: ParagraphProps) => {
       variants={paragraphVariants}
       initial='initial'
       whileInView='animate'
-      viewport={{ once: true }}
+      viewport={{
+        margin: '0px 0px -30% 0px',
+        once: true 
+      }}
     >
       {children}
     </motion.p>

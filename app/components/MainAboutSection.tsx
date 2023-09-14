@@ -1,25 +1,45 @@
 'use client'
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import { Title, Title3, Paragraph } from "../common/TextStyles"
 import { motion, useScroll, useTransform } from "framer-motion"
+import Image from "next/image"
 
 const MainAboutSection = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end end"]
+    offset: ["start end", "end start"]
   });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 1274])
-  const y3 = useTransform(scrollYProgress, [0, 1], [-90, 90])
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "10%"])
 
   return (
     <section className='pt-64 pb-24 flex flex-col justify-center gap-10'>
       <Title className="text-center mb-32" text="About  Me" />
       <div ref={ref} className="flex w-full gap-16">
         <motion.div
-          className="bg-gray-300 h-screen w-1/2"
-          style={{y}}
-        ></motion.div>
+          className="sticky bg-gray-300 h-screen w-1/2 overflow-hidden top-0 flex items-center"
+          initial={{
+            opacity: 0,
+            x: -30
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 1,
+              delay: 1
+            }
+          }}
+        >
+          <motion.div className="h-[120vh] w-full pb-10" style={{y:y}}>
+            <Image 
+              className='object-cover object-center'
+              fill
+              src="/images/about-photo.jpg"
+              alt='picture of Juan Pablo Alvarado'
+            />
+          </motion.div>
+        </motion.div>
         <motion.div
           className="flex flex-col gap-56 w-1/2 pb-48"
         >

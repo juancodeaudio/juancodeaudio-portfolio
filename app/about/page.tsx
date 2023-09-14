@@ -8,7 +8,7 @@ const About = () => {
       <WidthLayout>
         <MainAboutSection />
         <ServicesSection />
-        <div className='bg-red-200 h-screen pt-24 flex justify-center'>About</div>
+        <div className='h-screen bg-red-200 pt-24 flex justify-center'>TECHNOLOGIES SECTION</div>
       </WidthLayout>
     </main>
   )
