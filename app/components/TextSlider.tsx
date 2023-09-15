@@ -8,7 +8,7 @@ const TextSlider = () => {
 
   return (
     <motion.div
-      className="relative overflow-hidden whitespace-nowrap w-full mb-8"
+      className="relative flex overflow-hidden whitespace-nowrap w-full mb-8 gap-5"
       initial={{
         x: '10%',
         opacity: 0
@@ -23,9 +23,11 @@ const TextSlider = () => {
         duration: 1
       }}
     >
-      <motion.h2 style={{x: x}} className='relative m-0 pr-20'>Fullstack Web Developer - Audio Developer - Designer</motion.h2>
-      {/* <h2 className='absolute left-1/2 top-0'>WEB DEVELOPER -</h2> */}
-      {/* WEB DEVELOPER - AUDIO DEVELOPER - DESIGNER - */}
+      <motion.h2 style={{x: x}} className='relative m-0'>Fullstack Web Developer</motion.h2>
+      <motion.h2 style={{x: x}} className='relative m-0'>-</motion.h2>
+      <motion.h2 style={{x: x}} className='relative m-0'>Audio Developer</motion.h2>
+      <motion.h2 style={{x: x}} className='relative m-0'>-</motion.h2>
+      <motion.h2 style={{x: x}} className='relative m-0'>Designer</motion.h2>
     </motion.div>
   )
 }

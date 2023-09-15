@@ -5,8 +5,19 @@ import WidthLayout from "../common/WidthLayout"
 import Logo from "./Logo"
 import { useTransform, useScroll, motion } from "framer-motion"
 import { Title2 } from "../common/TextStyles"
+import { ArrowUpRightIcon } from "../common/icons"
 
 const Footer = () => {
+
+  const arrow = {
+    hover: {
+      x:[0,-2,4,0],
+      y:[0,2,-4,0],
+      transition: {
+        duration: 0.5
+      }
+    }
+  }
 
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -49,10 +60,30 @@ const Footer = () => {
                 SOCIALS
               </div>
               <ul className="flex gap-8">
-                <li><a href="https://www.linkedin.com/in/juancodeaudio/">LinkedIn</a></li>
-                <li><a href="https://github.com/juancodeaudio">Github</a></li>
-                <li><a href="https://www.instagram.com/juancodeaudio/">Instagram</a></li>
-                <li><a href="https://www.linkedin.com/in/juancodeaudio/">X</a></li>
+                <motion.li whileHover="hover">
+                  <a href="https://www.linkedin.com/in/juancodeaudio/" className="flex items-center gap-1">
+                    LinkedIn
+                    <motion.div variants={arrow}><ArrowUpRightIcon className="h-4 w-4" /></motion.div>
+                  </a>
+                </motion.li>
+                <motion.li whileHover="hover">
+                  <a href="https://github.com/juancodeaudio" className="flex items-center gap-1">
+                    Github
+                    <motion.div variants={arrow}><ArrowUpRightIcon className="h-4 w-4" /></motion.div>
+                  </a>
+                </motion.li>
+                <motion.li whileHover="hover">
+                  <a href="https://www.instagram.com/juancodeaudio/" className="flex items-center gap-1">
+                    Instagram
+                    <motion.div variants={arrow}><ArrowUpRightIcon className="h-4 w-4" /></motion.div>
+                  </a>
+                </motion.li>
+                <motion.li whileHover="hover">
+                  <a href="https://www.linkedin.com/in/juancodeaudio/" className="flex items-center gap-1">
+                    X
+                    <motion.div variants={arrow}><ArrowUpRightIcon className="h-4 w-4" /></motion.div>
+                  </a>
+                </motion.li>
               </ul>
             </div>
           </div>

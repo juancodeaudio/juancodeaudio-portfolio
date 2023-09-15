@@ -5,12 +5,14 @@ import { usePathname } from 'next/navigation'
 import WidthLayout from '../common/WidthLayout'
 import Logo from './Logo'
 import ThemeButton from './ThemeButton'
+import MagneticComponent from '../common/MagneticComponent'
 
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 
 const links = [
-  { href: "/", label: "Home," },
+  // { href: "/", label: "Home," },
   { href: "/about", label: "About," },
+  { href: "/projects", label: "Projects," },
   { href: "/contact", label: "Contact," },
 ]
 
@@ -48,24 +50,28 @@ const Navbar = () => {
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
     >
       <WidthLayout>
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center h-full justify-between'>
           <nav className='flex group items-center justify-center gap-2'>
             <Logo />
-            <Link href="/" className='flex relative overflow-hidden whitespace-nowrap ml-[5px] transition-all ease-in-out w-[150px] group-hover:w-[170px]'>
-              <p className='relative transition-transform duration-500 ease-in-out pl-1 group-hover:translate-x-[-150px]'>by juancodeaudio</p>
-              <p className='absolute pl-1 left-[150px] transition-transform duration-500 ease-in-out group-hover:translate-x-[-150px]'>Juan Pablo Alvarado</p>
-            </Link>
+            <MagneticComponent>
+              <Link href="/" className='flex relative overflow-hidden whitespace-nowrap ml-[5px] transition-all ease-in-out w-[150px] group-hover:w-[160px] duration-500'>
+                <p className='text-base relative transition-transform duration-500 ease-in-out pl-1 group-hover:translate-x-[-150px]'>by juancodeaudio</p>
+                <p className='text-base absolute pl-1 left-[150px] transition-transform duration-500 ease-in-out group-hover:translate-x-[-150px]'>Juan Pablo Alvarado</p>
+              </Link>
+            </MagneticComponent>
           </nav>
-          <nav className='flex gap-6'>
+          <nav className='flex gap-8 h-1/2'>
             {links.map((link) => (
-                <Link key={link.href} className='relative my-[16px] hover:opacity-50 transition-all' href={link.href}>
-                  {link.href === path && (
-                    <motion.span layoutId='underline' className='absolute top-full block h-1 w-2 bg-foreground mt-1' />
-                  )}
-                  {link.label}
+                <Link key={link.href} className='relative h-full hover:opacity-50 transition-all' href={link.href}>
+                  <MagneticComponent>
+                    {link.href === path && (
+                      <motion.span layoutId='underline' className='absolute bottom-0 block h-1 w-2 bg-foreground mt-1' />
+                    )}
+                    {link.label}
+                  </MagneticComponent>
                 </Link>
             ))}
-            <ThemeButton />
+            {/* <ThemeButton /> */}
           </nav>
         </div>
       </WidthLayout>

@@ -20,15 +20,19 @@ const MainAboutSection = () => {
           className="sticky bg-gray-300 h-screen w-1/2 overflow-hidden top-0 flex items-center"
           initial={{
             opacity: 0,
-            x: -30
+            y: 100
           }}
-          animate={{
+          whileInView={{
             opacity: 1,
-            x: 0,
+            y: 0,
             transition: {
-              duration: 1,
-              delay: 1
+              duration: 0.8,
+              // delay: 1
             }
+          }}
+          viewport={{
+            margin: '0px 0px -15% 0px',
+            once: true 
           }}
         >
           <motion.div className="h-[120vh] w-full pb-10" style={{y:y}}>
@@ -41,7 +45,7 @@ const MainAboutSection = () => {
           </motion.div>
         </motion.div>
         <motion.div
-          className="flex flex-col gap-56 w-1/2 pb-48"
+          className="flex flex-col gap-56 w-1/2 pb-96"
         >
           <div className="flex flex-col gap-56 w-full">
             <Paragraph className="w-1/2 mt-[500px]">

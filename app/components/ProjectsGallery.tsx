@@ -2,7 +2,8 @@
 import Image from 'next/image';
 import { useTransform, useScroll, motion, MotionValue } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-import { twJoin, twMerge } from 'tailwind-merge';
+import { twJoin } from 'tailwind-merge';
+import Link from 'next/link';
 
 interface columnProps {
   images: string[],
@@ -43,10 +44,6 @@ const Column: React.FC<columnProps> = ({images, imageSize, y=0, className}) => {
         className,
         imageSize === 'lg' ? 'w-1/2 lg:w-1/3' : 'w-1/4',
       )}
-      // className={`${
-      //   imageSize === 'lg' ? 'w-1/3' : 'w-1/4'
-      // } relative h-full flex flex-col gap-4
-      // odd:top-[-45%] even:top-[-95%] last:top-[-85%]`}
       style={{ y }}
       variants={columnVariants}
       initial="initial"
@@ -61,13 +58,14 @@ const Column: React.FC<columnProps> = ({images, imageSize, y=0, className}) => {
             className={`h-full w-full relative ${imageSize === 'lg' ? 'rounded-md' : 'rounded-2xl'} overflow-hidden`}
             variants={imageVariants}
           >
-            <Image 
-              className='object-cover hover:scale-110 transition duration-500 cursor-pointer bg-background'
-              // src={``}
-              src={`/images/${src}`}
-              alt='image'
-              fill
-            />
+            <Link href={`/projects/projectname`}>
+              <Image 
+                className='object-cover hover:scale-110 transition duration-500 cursor-pointer bg-background'
+                src={`/images/${src}`}
+                alt='image'
+                fill
+              />
+            </Link>
           </motion.div>
           )
         })

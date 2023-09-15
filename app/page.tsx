@@ -42,7 +42,7 @@ export default function Home() {
         <DescriptionLanding />
         <ProjectsGallery imageSize='lg' images={imageList} />
         <div className='bg-background py-24 flex justify-center'>
-          <Button href='/' buttonColor="light" variant="bordered" hoverColor='bg-primary'>Look for more projects</Button>
+          <Button href='/projects' buttonColor="light" variant="bordered" hoverColor='bg-primary'>Look for more projects</Button>
         </div>
       </WidthLayout>
     </main>

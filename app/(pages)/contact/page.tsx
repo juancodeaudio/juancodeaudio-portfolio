@@ -1,10 +1,11 @@
 'use client'
 
-import WidthLayout from "../common/WidthLayout"
-import { Title, Title2 } from "../common/TextStyles"
-import Button from "../common/Button"
+import WidthLayout from "../../common/WidthLayout"
+import { Title, Title2 } from "../../common/TextStyles"
+import Button from "../../common/Button"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
+import { ArrowDownIcon } from "../../common/icons"
 
 const inputs = {
   initial: {
@@ -43,6 +44,20 @@ const inputs = {
   }
 }
 
+const arrowVariants = {
+  initial: {
+    y: -50
+  },
+  animate: {
+    y: [-50, 50, 50, 100],
+    transition: {
+      delay: 1.5,
+      repeat: Infinity,
+      duration: 2 
+    }
+  }
+}
+
 const Contact = () => {
 
   const ref = useRef(null);
@@ -56,8 +71,13 @@ const Contact = () => {
   return (
     <main>
       <WidthLayout>
-        <form className='pt-64 pb-24 flex flex-col justify-center gap-16 items-center'>
+        <form className='relative pt-64 pb-24 flex flex-col justify-center gap-16 items-center'>
           <Title className="text-center mb-20" text="Contact Me" />
+          <div className="absolute top-[590px] right-1/4 h-24 w-10 flex justify-center overflow-hidden">
+            <motion.div variants={arrowVariants} initial="initial" animate="animate">
+              <ArrowDownIcon className="h-12 w-12" />
+            </motion.div>
+          </div>
           <div ref={ref}  className="flex w-full mb-28">
             <motion.div style={{y: y}} className="w-1/2 px-24 flex flex-col gap-10">
               <div className="flex flex-col">
@@ -78,6 +98,8 @@ const Contact = () => {
                   type="text"
                   id="name"
                   placeholder="John Doe *"
+                  autoComplete="name"
+                  required
                 />
               </div>
               <motion.div className="flex flex-col">
@@ -98,6 +120,7 @@ const Contact = () => {
                   type="text"
                   id="organization"
                   placeholder="John & Doe Inc. *"
+                  autoComplete="organization"
                 />
               </motion.div>
               <div className="flex flex-col">
@@ -118,6 +141,8 @@ const Contact = () => {
                   type="email"
                   id="email"
                   placeholder="john@doe.com *"
+                  autoComplete="email"
+                  required
                 />
               </div>
             </motion.div>
@@ -140,6 +165,7 @@ const Contact = () => {
                   type="text"
                   id="service"
                   placeholder="Web Development, Audio Development... *"
+                  required
                 />
               </div>
               <div className="flex flex-col">
@@ -154,12 +180,13 @@ const Contact = () => {
                   whileFocus="focus"
                   style={{originY: 1, originX: 0}}
                   viewport={{
-                    margin: '0px 0px -20% 0px',
+                    margin: '0px 0px -20% 0px', 
                     once: true 
                   }}
                   type="text"
                   id="message"
                   placeholder="Hello Juan, I'm looking for... *"
+                  required
                 />
               </div>
             </motion.div>
