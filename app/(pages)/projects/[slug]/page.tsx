@@ -34,7 +34,7 @@ const Projects = ({params}: {params: {slug: string}}) => {
             ))}
           </div>
           <Image
-            src={`/images/${projectData.src}`}
+            src={`/images/projects/${projectData.slug}/${projectData.src}`}
             alt={projectData.slug}
             width={800}
             height={500}
@@ -44,7 +44,7 @@ const Projects = ({params}: {params: {slug: string}}) => {
             {projectData.altImages.map((image) => (
               <Image
                 key={image}
-                src={`/images/${image}`}
+                src={`/images/projects/${projectData.slug}/${image}`}
                 alt={projectData.slug}
                 width={400}
                 height={500}

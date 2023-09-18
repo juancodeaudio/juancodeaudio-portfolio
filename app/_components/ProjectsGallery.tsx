@@ -11,12 +11,12 @@ const columnProjects = [
   [
     { imageSrc: projects[0].src, projectUrl: projects[0].slug },
     { imageSrc: projects[1].altImages[0], projectUrl: projects[1].slug },
-    { imageSrc: projects[6].src, projectUrl: projects[6].slug },
-    { imageSrc: projects[7].src, projectUrl: projects[7].slug }
+    { imageSrc: projects[5].src, projectUrl: projects[5].slug },
+    { imageSrc: projects[4].src, projectUrl: projects[4].slug }
   ],
   [
-    { imageSrc: projects[4].src, projectUrl: projects[4].slug },
-    { imageSrc: projects[5].src, projectUrl: projects[5].slug },
+    { imageSrc: projects[4].altImages[0], projectUrl: projects[4].slug },
+    { imageSrc: projects[5].altImages[0], projectUrl: projects[5].slug },
     { imageSrc: projects[2].src, projectUrl: projects[2].slug },
     { imageSrc: projects[3].src, projectUrl: projects[3].slug }
   ],
@@ -72,7 +72,7 @@ const Column: React.FC<columnProps> = ({columnProjects, imageSize, y=0, classNam
             <Link href={`/projects/${project.projectUrl}`}>
               <Image 
                 className='object-cover hover:scale-110 transition duration-500 cursor-pointer bg-background'
-                src={`/images/${project.imageSrc}`}
+                src={`/images/projects/${project.projectUrl}/${project.imageSrc}`}
                 alt='image'
                 fill
               />

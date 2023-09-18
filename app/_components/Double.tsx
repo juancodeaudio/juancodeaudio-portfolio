@@ -74,7 +74,7 @@ const Double: React.FC<DoubleProps> = ({projects, reversed}) => {
             <div className="absolute top-[12.5%] left-[5%] h-[75%] w-[90%] p-5">
               <Image 
                 className="object-cover shadow-md rounded-lg"
-                src={`/images/${projects[0].src}`}
+                src={`/images/projects/${projects[0].slug}/${projects[0].src}`}
                 fill
                 alt={"image"}
               />
@@ -93,7 +93,7 @@ const Double: React.FC<DoubleProps> = ({projects, reversed}) => {
             <div className="absolute top-[12.5%] left-[5%] h-[75%] w-[90%] p-5">
               <Image 
                 className="object-cover shadow-md rounded-lg"
-                src={`/images/${projects[1].src}`}
+                src={`/images/projects/${projects[1].slug}/${projects[1].src}`}
                 fill
                 alt={"image"}
               />
