@@ -1,7 +1,7 @@
 import { useRef } from "react"
-import Button from "../common/Button"
-import { Paragraph, Title3 } from "../common/TextStyles"
 import { motion, useScroll, useTransform } from "framer-motion";
+import Button from "@/common/Button"
+import { Paragraph, Title3 } from "@/common/TextStyles"
 
 
 const DescriptionLanding = () => {

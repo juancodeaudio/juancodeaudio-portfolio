@@ -1,8 +1,8 @@
 'use client'
-import { useRef, useState, useEffect } from "react"
-import { Title, Title3, Paragraph } from "../common/TextStyles"
+import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
+import { Title, Title3, Paragraph } from "@/common/TextStyles"
 
 const MainAboutSection = () => {
   const ref = useRef(null);

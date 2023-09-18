@@ -1,16 +1,12 @@
 'use client'
 import Image from "next/image"
 import { useRef, MouseEvent } from 'react';
-import { Title2, Paragraph } from "../common/TextStyles";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Title2, Paragraph } from "@/common/TextStyles";
+import { DoubleProps } from "@/lib/types";
 
-type Props = {
-  projects: any,
-  reversed?: boolean
-}
-
-const Double: React.FC<Props> = ({projects, reversed}) => {
+const Double: React.FC<DoubleProps> = ({projects, reversed}) => {
 
   const firstImage = useRef<HTMLDivElement>(null);
   const secondImage = useRef<HTMLDivElement>(null);
@@ -27,6 +23,14 @@ const Double: React.FC<Props> = ({projects, reversed}) => {
           requestAnimationFrameId = window.requestAnimationFrame(animate);
       }
   }
+
+  const manageMouseLeave = () => {
+    xPercent = reversed ? 100 : 0;
+    
+    if(!requestAnimationFrameId){
+        requestAnimationFrameId = window.requestAnimationFrame(animate);
+    }
+}
 
   const animate = () => {
     //Add easing to the animation
@@ -51,7 +55,8 @@ const Double: React.FC<Props> = ({projects, reversed}) => {
   return (
     <motion.div
       onMouseMove={(e) => {manageMouseMove(e)}}
-      className="flex gap-4 mt-[10vh] h-[85vh]"
+      onMouseLeave={manageMouseLeave}
+      className="flex gap-4 mt-[10vh] h-[90vh]"
       initial={{y: 200, opacity: 0}}
       whileInView={{
         opacity: 1,

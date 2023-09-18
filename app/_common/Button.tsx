@@ -1,16 +1,9 @@
 'use client'
 import Link from "next/link";
-import { VariantProps, cva } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
-
-interface ButtonProps 
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "disabled">, 
-  VariantProps<typeof button> {
-    children: React.ReactNode;
-    hoverColor: string;
-    href: string;
-}
+import { IButtonProps } from "@/lib/types";
 
 const button = cva("w-64 h-16 relative overflow-hidden", {
   variants: {
@@ -64,7 +57,7 @@ const button = cva("w-64 h-16 relative overflow-hidden", {
   }
 });
 
-const Button = ({ children, href, buttonColor, variant, disabled, hoverColor }: ButtonProps) => {
+const Button: React.FC<IButtonProps> = ({ children, href, buttonColor, variant, disabled, hoverColor }) => {
   
   const parent = {
     variantA: { scale: 1, x: -50, opacity: 0 },

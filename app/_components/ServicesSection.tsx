@@ -1,7 +1,7 @@
 'use client'
-import { Title2, Paragraph } from "../common/TextStyles"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
+import { Title2, Paragraph } from "@/common/TextStyles"
 
 const ServicesSection = () => {
 

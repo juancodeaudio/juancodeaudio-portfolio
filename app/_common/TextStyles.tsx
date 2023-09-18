@@ -1,15 +1,6 @@
 'use client'
-import { motion, MotionValue } from 'framer-motion'
-
-type TitleProps = {
-  text: string;
-  className?: string;
-  y?: MotionValue;
-}
-type ParagraphProps = {
-  children: React.ReactNode;
-  className?: string;
-}
+import { motion } from 'framer-motion'
+import { TitleProps, ParagraphProps } from '@/lib/types'
 
 function splitSentences(text: string) {
   const words = text.split(" ");
@@ -194,7 +185,7 @@ export const Title3: React.FC<TitleProps> = ({text, className, y=0}) => {
   )
 }
 
-export const Paragraph = ({children, className}: ParagraphProps) => {
+export const Paragraph: React.FC<ParagraphProps> = ({children, className}) => {
 
   const paragraphVariants = {
     initial: {

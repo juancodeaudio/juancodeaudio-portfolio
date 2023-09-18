@@ -1,7 +1,7 @@
 'use client'
 import { useTheme } from "next-themes"
-import { SunIcon, MoonIcon } from "../common/icons"
 import { useEffect, useState } from "react"
+import { SunIcon, MoonIcon } from "@/common/icons"
 
 
 const ThemeButton = () => {

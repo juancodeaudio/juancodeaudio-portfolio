@@ -2,19 +2,16 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import WidthLayout from '../common/WidthLayout'
+import WidthLayout from '@/common/WidthLayout'
 import Logo from './Logo'
 import ThemeButton from './ThemeButton'
-import MagneticComponent from '../common/MagneticComponent'
+import MagneticComponent from '@/common/MagneticComponent'
+import { links } from "@/lib/data";
 
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 
-const links = [
-  // { href: "/", label: "Home," },
-  { href: "/about", label: "About," },
-  { href: "/projects", label: "Projects," },
-  { href: "/contact", label: "Contact," },
-]
+
+
 
 const Navbar = () => {
 

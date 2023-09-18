@@ -1,7 +1,7 @@
-import { Title } from '../common/TextStyles';
+import { Title } from '@/common/TextStyles';
 import LandingBackground from './LandingBackground';
-import Button from "../common/Button"
-import WidthLayout from "../common/WidthLayout"
+import Button from "@/common/Button"
+import WidthLayout from "@/common/WidthLayout"
 import TextSlider from "./TextSlider"
 
 const Landing = () => {

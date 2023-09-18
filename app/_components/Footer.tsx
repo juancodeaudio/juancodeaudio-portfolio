@@ -1,11 +1,11 @@
 'use client'
 import { useRef } from "react"
-import Button from "../common/Button"
-import WidthLayout from "../common/WidthLayout"
-import Logo from "./Logo"
 import { useTransform, useScroll, motion } from "framer-motion"
-import { Title2 } from "../common/TextStyles"
-import { ArrowUpRightIcon } from "../common/icons"
+import Button from "@/common/Button"
+import WidthLayout from "@/common/WidthLayout"
+import Logo from "./Logo"
+import { Title2 } from "@/common/TextStyles"
+import { ArrowUpRightIcon } from "@/common/icons"
 
 const Footer = () => {
 

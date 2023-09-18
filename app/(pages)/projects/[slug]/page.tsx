@@ -1,5 +1,5 @@
-import WidthLayout from "@/app/common/WidthLayout"
-import { Title2 } from "@/app/common/TextStyles"
+import WidthLayout from "@/common/WidthLayout"
+import { Title2 } from "@/common/TextStyles"
 
 const Projects = ({params}: {params: {slug: string}}) => {
   return (

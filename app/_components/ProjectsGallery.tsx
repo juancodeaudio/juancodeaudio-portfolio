@@ -4,18 +4,29 @@ import { useTransform, useScroll, motion, MotionValue } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { twJoin } from 'tailwind-merge';
 import Link from 'next/link';
+import { projectsData as projects } from '@/lib/data';
+import { columnProps, galleryProps } from '@/lib/types';
 
-interface columnProps {
-  images: string[],
-  y: MotionValue<number>,
-  imageSize: 'lg' | 'sm',
-  className?: string
-}
-
-interface galleryProps {
-  images: string[],
-  imageSize: 'lg' | 'sm'
-}
+const columnProjects = [
+  [
+    { imageSrc: projects[0].src, projectUrl: projects[0].slug },
+    { imageSrc: projects[1].src, projectUrl: projects[1].slug },
+    { imageSrc: projects[6].src, projectUrl: projects[6].slug },
+    { imageSrc: projects[7].src, projectUrl: projects[7].slug }
+  ],
+  [
+    { imageSrc: projects[4].src, projectUrl: projects[4].slug },
+    { imageSrc: projects[5].src, projectUrl: projects[5].slug },
+    { imageSrc: projects[2].src, projectUrl: projects[2].slug },
+    { imageSrc: projects[3].src, projectUrl: projects[3].slug }
+  ],
+  [
+    { imageSrc: projects[2].src, projectUrl: projects[2].slug },
+    { imageSrc: projects[3].src, projectUrl: projects[3].slug },
+    { imageSrc: projects[0].src, projectUrl: projects[0].slug },
+    { imageSrc: projects[1].src, projectUrl: projects[1].slug }
+  ]
+]
 
 const columnVariants = {
   initial: {},
@@ -36,7 +47,7 @@ const imageVariants = {
   }
 }
 
-const Column: React.FC<columnProps> = ({images, imageSize, y=0, className}) => {
+const Column: React.FC<columnProps> = ({columnProjects, imageSize, y=0, className}) => {
   return (
     <motion.div 
       className={twJoin(
@@ -51,17 +62,17 @@ const Column: React.FC<columnProps> = ({images, imageSize, y=0, className}) => {
       viewport={{ once: true }}
       >
       {
-        images.map( (src, i) => {
+        columnProjects.map( (project) => {
           return (
           <motion.div 
-            key={i} 
+            key={project.projectUrl} 
             className={`h-full w-full relative ${imageSize === 'lg' ? 'rounded-md' : 'rounded-2xl'} overflow-hidden`}
             variants={imageVariants}
           >
-            <Link href={`/projects/projectname`}>
+            <Link href={`/projects/${project.projectUrl}`}>
               <Image 
                 className='object-cover hover:scale-110 transition duration-500 cursor-pointer bg-background'
-                src={`/images/${src}`}
+                src={`/images/${project.imageSrc}`}
                 alt='image'
                 fill
               />
@@ -74,7 +85,7 @@ const Column: React.FC<columnProps> = ({images, imageSize, y=0, className}) => {
   )
 }
 
-const ProjectsGallery: React.FC<galleryProps> = ({ imageSize, images }) => {
+const ProjectsGallery: React.FC<galleryProps> = ({ imageSize }) => {
 
   const gallery = useRef(null)
   const [dimension, setDimension] = useState({width:0, height:0});
@@ -106,16 +117,16 @@ const ProjectsGallery: React.FC<galleryProps> = ({ imageSize, images }) => {
         {
           imageSize === 'lg' ? (
             <>
-              <Column imageSize={imageSize} images={[images[0], images[1], images[2], images[3]]} y={y}/>
-              <Column imageSize={imageSize} images={[images[4], images[5], images[6], images[7]]} y={y2}/>
-              <Column className='hidden lg:flex' imageSize={imageSize} images={[images[8], images[9], images[10], images[11]]} y={y3}/>
+              <Column imageSize={imageSize} y={y} columnProjects={columnProjects[0]} />
+              <Column imageSize={imageSize} y={y2} columnProjects={columnProjects[1]} />
+              <Column imageSize={imageSize} y={y3} columnProjects={columnProjects[2]} className='hidden lg:flex' />
             </>
           ) : (
             <>
-              <Column imageSize={imageSize} images={[images[0], images[1], images[2]]} y={y}/>
+              {/* <Column imageSize={imageSize} images={[images[0], images[1], images[2]]} y={y}/>
               <Column imageSize={imageSize} images={[images[3], images[4], images[5]]} y={y2}/>
               <Column imageSize={imageSize} images={[images[6], images[7], images[8]]} y={y3}/>
-              <Column imageSize={imageSize} images={[images[9], images[10], images[11]]} y={y4}/>
+              <Column imageSize={imageSize} images={[images[9], images[10], images[11]]} y={y4}/> */}
             </>
           )
         }

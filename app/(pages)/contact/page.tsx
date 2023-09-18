@@ -1,11 +1,11 @@
 'use client'
 
-import WidthLayout from "../../common/WidthLayout"
-import { Title, Title2 } from "../../common/TextStyles"
-import Button from "../../common/Button"
-import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
-import { ArrowDownIcon } from "../../common/icons"
+import { motion, useScroll, useTransform } from "framer-motion"
+import WidthLayout from "@/common/WidthLayout"
+import { Title, Title2 } from "@/common/TextStyles"
+import Button from "@/common/Button"
+import { ArrowDownIcon } from "@/common/icons"
 
 const inputs = {
   initial: {

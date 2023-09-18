@@ -1,6 +1,6 @@
-import WidthLayout from "../../common/WidthLayout"
-import MainAboutSection from "../../components/MainAboutSection"
-import ServicesSection from "../../components/ServicesSection"
+import WidthLayout from "@/common/WidthLayout"
+import MainAboutSection from "@/components/MainAboutSection"
+import ServicesSection from "@/components/ServicesSection"
 
 const About = () => {
   return (
