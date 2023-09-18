@@ -10,7 +10,7 @@ import { columnProps, galleryProps } from '@/lib/types';
 const columnProjects = [
   [
     { imageSrc: projects[0].src, projectUrl: projects[0].slug },
-    { imageSrc: projects[1].src, projectUrl: projects[1].slug },
+    { imageSrc: projects[1].altImages[0], projectUrl: projects[1].slug },
     { imageSrc: projects[6].src, projectUrl: projects[6].slug },
     { imageSrc: projects[7].src, projectUrl: projects[7].slug }
   ],
@@ -23,7 +23,7 @@ const columnProjects = [
   [
     { imageSrc: projects[2].src, projectUrl: projects[2].slug },
     { imageSrc: projects[3].src, projectUrl: projects[3].slug },
-    { imageSrc: projects[0].src, projectUrl: projects[0].slug },
+    { imageSrc: projects[0].altImages[0], projectUrl: projects[0].slug },
     { imageSrc: projects[1].src, projectUrl: projects[1].slug }
   ]
 ]
