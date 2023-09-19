@@ -16,9 +16,10 @@ export const projectsData = [
     demo: "https://blog-test-frontend.vercel.app/",
     repo: 'https://github.com/juancodeaudio/blog-test-frontend',
     src: "strapi-blog.jpg",
-    video: '',
+    videos: ['', ''],
     altImages: ["strapi-blog.jpg", "strapi-blog.jpg", "strapi-blog.jpg"],
-    background: "bg-neutral-300",
+    background: "bg-gradient-to-br from-neutral-300 via-[#B69083] via-40% to-[#985136]",
+    secondBackground: "bg-gradient-to-br from-[#403F44] to-[#1E1E20]",
     foreground: "dark"
   },
   {
@@ -31,9 +32,10 @@ export const projectsData = [
     demo: "https://juancodeaudio.github.io/michify/",
     repo: 'https://github.com/juancodeaudio/michify',
     src: "michify.jpg",
-    video: '',
+    videos: ['', ''],
     altImages: ["michify.jpg", "michify.jpg", "michify.jpg"],
-    background: "bg-[#F9D677]",
+    background: "bg-gradient-to-br from-[#F9D677] via-[#FAE1A1] via-80% to-[#FBECC4]",
+    secondBackground: "bg-gradient-to-br from-[#393F43] to-[#232631]",
     foreground: "dark"
   },
   {
@@ -46,9 +48,10 @@ export const projectsData = [
     demo: "https://juancodeaudio.github.io/filmaly/",
     repo: 'https://github.com/juancodeaudio/filmaly',
     src: "filmaly.jpg",
-    video: '',
+    videos: ['', ''],
     altImages: ["filmaly.jpg", "filmaly.jpg", "filmaly.jpg"],
-    background: "bg-[#1C1D2A]",
+    background: "bg-gradient-to-br from-[#1C1D2A] to-[#82BFE3]",
+    secondBackground: "bg-gradient-to-br from-[#1C1D2A] to-[#030506]",
     foreground: "light"
   },
   {
@@ -61,9 +64,10 @@ export const projectsData = [
     demo: "https://juancodeaudio.github.io/taskr/",
     repo: 'https://github.com/juancodeaudio/taskr',
     src: "taskr.jpg",
-    video: '',
+    videos: ["taskr-v.mov", ''],
     altImages: ["taskr.jpg", "taskr.jpg", "taskr.jpg"],
-    background: "bg-[#8FE1B6]",
+    background: "bg-gradient-to-br from-[#568094] via-[#8FE1B6] to-[#449979]",
+    secondBackground: "bg-gradient-to-br from-[#232227] to-[#161618]",
     foreground: "dark"
   },
   {
@@ -76,9 +80,10 @@ export const projectsData = [
     demo: "https://juancodeaudio.github.io/filmaly/",
     repo: 'https://github.com/juancodeaudio/filmaly',
     src: "1.jpg",
-    video: '',
+    videos: ['', ''],
     altImages: ["1.jpg", "1.jpg", "1.jpg"],
     background: "bg-neutral-300",
+    secondBackground: "",
     foreground: "dark"
   },
   {
@@ -91,9 +96,10 @@ export const projectsData = [
     demo: "https://juancodeaudio.github.io/taskr/",
     repo: 'https://github.com/juancodeaudio/taskr',
     src: "4.jpg",
-    video: '',
+    videos: ['', ''],
     altImages: ["4.jpg", "4.jpg", "4.jpg"],
     background: "bg-[#11121B]",
+    secondBackground: "",
     foreground: "light"
   }
 ] as const;

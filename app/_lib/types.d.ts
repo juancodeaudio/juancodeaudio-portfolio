@@ -30,7 +30,8 @@ export type DoubleProps = {
 
 export type columnProject = {
   imageSrc: string,
-  projectUrl: string
+  projectUrl: string,
+  videoSrc: string
 }
 export interface columnProps {
   columnProjects: columnProject[],

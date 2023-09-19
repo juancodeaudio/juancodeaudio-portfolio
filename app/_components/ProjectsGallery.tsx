@@ -9,22 +9,22 @@ import { columnProps, galleryProps } from '@/lib/types';
 
 const columnProjects = [
   [
-    { imageSrc: projects[0].src, projectUrl: projects[0].slug },
-    { imageSrc: projects[1].altImages[0], projectUrl: projects[1].slug },
-    { imageSrc: projects[5].src, projectUrl: projects[5].slug },
-    { imageSrc: projects[4].src, projectUrl: projects[4].slug }
+    { imageSrc: projects[0].src, projectUrl: projects[0].slug, videoSrc: projects[0].videos[0] },
+    { imageSrc: projects[1].altImages[0], projectUrl: projects[1].slug, videoSrc: projects[1].videos[0] },
+    { imageSrc: projects[5].src, projectUrl: projects[5].slug, videoSrc: projects[5].videos[0] },
+    { imageSrc: projects[4].src, projectUrl: projects[4].slug, videoSrc: projects[4].videos[0] }
   ],
   [
-    { imageSrc: projects[4].altImages[0], projectUrl: projects[4].slug },
-    { imageSrc: projects[5].altImages[0], projectUrl: projects[5].slug },
-    { imageSrc: projects[2].src, projectUrl: projects[2].slug },
-    { imageSrc: projects[3].src, projectUrl: projects[3].slug }
+    { imageSrc: projects[4].altImages[0], projectUrl: projects[4].slug, videoSrc: projects[4].videos[0] },
+    { imageSrc: projects[2].src, projectUrl: projects[2].slug, videoSrc: projects[2].videos[0] },
+    { imageSrc: projects[3].src, projectUrl: projects[3].slug, videoSrc: projects[3].videos[0] },
+    { imageSrc: projects[5].altImages[0], projectUrl: projects[5].slug, videoSrc: projects[5].videos[0] }
   ],
   [
-    { imageSrc: projects[2].src, projectUrl: projects[2].slug },
-    { imageSrc: projects[3].src, projectUrl: projects[3].slug },
-    { imageSrc: projects[0].altImages[0], projectUrl: projects[0].slug },
-    { imageSrc: projects[1].src, projectUrl: projects[1].slug }
+    { imageSrc: projects[2].src, projectUrl: projects[2].slug, videoSrc: projects[2].videos[0] },
+    { imageSrc: projects[3].src, projectUrl: projects[3].slug, videoSrc: projects[3].videos[1] },
+    { imageSrc: projects[0].altImages[0], projectUrl: projects[0].slug, videoSrc: projects[0].videos[0] },
+    { imageSrc: projects[1].src, projectUrl: projects[1].slug, videoSrc: projects[1].videos[0] }
   ]
 ]
 
@@ -70,12 +70,22 @@ const Column: React.FC<columnProps> = ({columnProjects, imageSize, y=0, classNam
             variants={imageVariants}
           >
             <Link href={`/projects/${project.projectUrl}`}>
-              <Image 
+              <video
+                src={project.videoSrc ? `/images/projects/${project.projectUrl}/${project.videoSrc}` : ''}
+                poster={`/images/projects/${project.projectUrl}/${project.imageSrc}`}
+                className='w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer bg-background'
+                loop
+                muted
+                autoPlay
+                playsInline
+                controls={false}
+              />
+              {/* <Image 
                 className='object-cover hover:scale-110 transition duration-500 cursor-pointer bg-background'
                 src={`/images/projects/${project.projectUrl}/${project.imageSrc}`}
                 alt='image'
                 fill
-              />
+              /> */}
             </Link>
           </motion.div>
           )

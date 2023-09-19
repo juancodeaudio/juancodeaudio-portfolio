@@ -71,7 +71,7 @@ const Projects = ({params}: {params: {slug: string}}) => {
         </div>
         <Paragraph>{projectData.description}</Paragraph>
         <section className="flex w-full justify-center bg-foreground/5">
-          <div className="h-full w-1/2 flex justify-center bg-foreground/50 py-48">
+          <div className={`h-full w-1/2 flex justify-center ${projectData.secondBackground} py-48`}>
             <Image
               src={`/images/projects/${projectData.slug}/${projectData.altImages[0]}`}
               className="shadow-lg shadow-background/30 rounded-lg"

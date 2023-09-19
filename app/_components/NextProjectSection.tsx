@@ -42,7 +42,7 @@ const NextProjectSection: React.FC<Props> = ({nextProject}) => {
         </div>
         <Link href={`/projects/${projectsData.at(nextProject)?.slug}`}>
           <Button
-            buttonColor={projectsData.at(nextProject)?.foreground} variant="flat" hoverColor="bg-foreground"
+            buttonColor={projectsData.at(nextProject)?.foreground} variant="flat" hoverColor="bg-foreground/30"
           >
             Visit the next project
           </Button>
