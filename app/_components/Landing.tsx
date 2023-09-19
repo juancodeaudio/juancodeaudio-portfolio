@@ -1,12 +1,13 @@
 import { Title } from '@/common/TextStyles';
 import LandingBackground from './LandingBackground';
 import Button from "@/common/Button"
-import WidthLayout from "@/common/WidthLayout"
+import WidthLayout from "@/app/_common/WidthLayout"
 import TextSlider from "./TextSlider"
+import Link from 'next/link';
 
 const Landing = () => {
   return (
-    <section className="h-screen">
+    <section className="h-screen px-10">
       {/* bg-landing-bg bg-cover bg-no-repeat bg-center */}
       {/* bg-gray-300 */}
       <WidthLayout>
@@ -18,7 +19,9 @@ const Landing = () => {
           </div>
           {/* lg:w-7/12 */}
           <TextSlider />
-          <Button href='/contact' buttonColor="light" hoverColor="bg-primary">CONTACT ME</Button>
+          <Link href='/contact'>
+            <Button buttonColor="light" hoverColor="bg-primary">CONTACT ME</Button>
+          </Link>
         </div>
       </WidthLayout>
     </section>

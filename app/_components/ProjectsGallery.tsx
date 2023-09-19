@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image';
-import { useTransform, useScroll, motion, MotionValue } from 'framer-motion';
+import { useTransform, useScroll, motion } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { twJoin } from 'tailwind-merge';
 import Link from 'next/link';

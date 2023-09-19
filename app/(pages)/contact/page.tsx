@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
-import WidthLayout from "@/common/WidthLayout"
+import WidthLayout from "@/app/_common/WidthLayout"
 import { Title, Title2 } from "@/common/TextStyles"
 import Button from "@/common/Button"
 import { ArrowDownIcon } from "@/common/icons"
@@ -191,7 +191,7 @@ const Contact = () => {
               </div>
             </motion.div>
           </div>
-          <Button variant="bordered" buttonColor="light" href="#" hoverColor="bg-primary">Send</Button>
+          <Button variant="bordered" buttonColor="light" hoverColor="bg-primary">Send</Button>
         </form>
       </WidthLayout>
     </main>

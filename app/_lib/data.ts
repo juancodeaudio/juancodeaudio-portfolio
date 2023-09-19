@@ -11,12 +11,15 @@ export const projectsData = [
     slug: "strapi-blog-demo",
     name: "Strapi Blog Demo",
     description: "A partnership between Google & SN37.",
-    techStack: ["Next JS", "Tailwind CSS"],
+    techStack: ["Next JS", "Strapi", "Tailwind CSS", "PostgreSQL"],
     year: 2023,
+    demo: "https://blog-test-frontend.vercel.app/",
+    repo: 'https://github.com/juancodeaudio/blog-test-frontend',
     src: "strapi-blog.jpg",
     video: '',
     altImages: ["strapi-blog.jpg", "strapi-blog.jpg", "strapi-blog.jpg"],
-    background: "bg-neutral-300"
+    background: "bg-neutral-300",
+    foreground: "dark"
   },
   {
     id: 2,
@@ -25,10 +28,13 @@ export const projectsData = [
     description: "Portfolio site for Decimal.",
     techStack: ["Next JS", "Tailwind CSS"],
     year: 2023,
+    demo: "https://juancodeaudio.github.io/michify/",
+    repo: 'https://github.com/juancodeaudio/michify',
     src: "michify.jpg",
     video: '',
     altImages: ["michify.jpg", "michify.jpg", "michify.jpg"],
-    background: "bg-[#F9D677]"
+    background: "bg-[#F9D677]",
+    foreground: "dark"
   },
   {
     id: 3,
@@ -37,10 +43,13 @@ export const projectsData = [
     description: "New web design for the blockchain investment fund Maven 11.",
     techStack: ["Next JS", "Tailwind CSS"],
     year: 2022,
+    demo: "https://juancodeaudio.github.io/filmaly/",
+    repo: 'https://github.com/juancodeaudio/filmaly',
     src: "filmaly.jpg",
     video: '',
     altImages: ["filmaly.jpg", "filmaly.jpg", "filmaly.jpg"],
-    background: "bg-[#1C1D2A]"
+    background: "bg-[#1C1D2A]",
+    foreground: "light"
   },
   {
     id: 4,
@@ -49,10 +58,13 @@ export const projectsData = [
     description: "Wix Playground is powered by the Wix.com design team.",
     techStack: ["Next JS", "Tailwind CSS"],
     year: 2022,
+    demo: "https://juancodeaudio.github.io/taskr/",
+    repo: 'https://github.com/juancodeaudio/taskr',
     src: "taskr.jpg",
     video: '',
     altImages: ["taskr.jpg", "taskr.jpg", "taskr.jpg"],
-    background: "bg-[#8FE1B6]"
+    background: "bg-[#8FE1B6]",
+    foreground: "dark"
   },
   {
     id: 5,
@@ -61,10 +73,13 @@ export const projectsData = [
     description: "The online presence for Powell—Studio.",
     techStack: ["Next JS", "Tailwind CSS"],
     year: 2023,
+    demo: "https://juancodeaudio.github.io/filmaly/",
+    repo: 'https://github.com/juancodeaudio/filmaly',
     src: "1.jpg",
     video: '',
     altImages: ["1.jpg", "1.jpg", "1.jpg"],
-    background: "bg-neutral-300"
+    background: "bg-neutral-300",
+    foreground: "dark"
   },
   {
     id: 6,
@@ -73,9 +88,12 @@ export const projectsData = [
     description: "An Italian animation studio.",
     techStack: ["Next JS", "Tailwind CSS"],
     year: 2022,
+    demo: "https://juancodeaudio.github.io/taskr/",
+    repo: 'https://github.com/juancodeaudio/taskr',
     src: "4.jpg",
     video: '',
     altImages: ["4.jpg", "4.jpg", "4.jpg"],
-    background: "bg-[#11121B]"
+    background: "bg-[#11121B]",
+    foreground: "light"
   }
 ] as const;

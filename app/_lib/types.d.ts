@@ -2,11 +2,11 @@ export interface IButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "disabled">, 
   VariantProps<typeof button> {
     children: React.ReactNode;
-    href: string;
     buttonColor: "dark" | "light" | "error" | null | undefined;
     variant?: "bordered" | "flat" | null | undefined;
     disabled?: boolean;
     hoverColor: string;
+    size?: "sm" |  "lg";
 }
 
 export type iconProps = {
@@ -14,7 +14,7 @@ export type iconProps = {
 }
 
 export type TitleProps = {
-  text: string;
+  text: string | undefined;
   className?: string;
   y?: MotionValue;
 }

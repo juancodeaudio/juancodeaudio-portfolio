@@ -5,7 +5,7 @@ type Props = {
 
 const WidthLayout: React.FC<Props> = ({ children, className }) => {
   return (
-    <div className={`max-w-[1900px] h-full m-auto px-10 ${className}`}>
+    <div className={`max-w-[1900px] h-full m-auto ${className}`}>
       {children}
     </div>
   )

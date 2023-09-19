@@ -1,4 +1,4 @@
-import WidthLayout from "@/common/WidthLayout"
+import WidthLayout from "@/app/_common/WidthLayout"
 import MainAboutSection from "@/components/MainAboutSection"
 import ServicesSection from "@/components/ServicesSection"
 

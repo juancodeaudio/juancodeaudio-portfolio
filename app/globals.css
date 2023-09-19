@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  main {
+    @apply font-okine bg-background text-foreground;
+  }
   h1 {
     @apply text-[280px] leading-[0.6] uppercase font-neima text-background;
     -webkit-text-stroke: 1px #f5f5f5;

@@ -2,6 +2,7 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion";
 import Button from "@/common/Button"
 import { Paragraph, Title3 } from "@/common/TextStyles"
+import Link from "next/link";
 
 
 const DescriptionLanding = () => {
@@ -34,9 +35,11 @@ const DescriptionLanding = () => {
         className="col-start-9 col-span-4 row-start-3 row-span-4"
       />
       <motion.div style={{ y: y2 }} className="col-start-9 col-span-4 row-start-7 row-span-1 justify-end flex flex-col">
-        <Button href='/about' buttonColor="light" hoverColor="bg-primary">
-          ABOUT ME
-        </Button>
+        <Link href="/about">
+          <Button buttonColor="light" hoverColor="bg-primary">
+            ABOUT ME
+          </Button>
+        </Link>
       </motion.div>
     </section>
   )

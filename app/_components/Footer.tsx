@@ -2,10 +2,11 @@
 import { useRef } from "react"
 import { useTransform, useScroll, motion } from "framer-motion"
 import Button from "@/common/Button"
-import WidthLayout from "@/common/WidthLayout"
+import WidthLayout from "@/app/_common/WidthLayout"
 import Logo from "./Logo"
 import { Title2 } from "@/common/TextStyles"
 import { ArrowUpRightIcon } from "@/common/icons"
+import Link from "next/link"
 
 const Footer = () => {
 
@@ -27,7 +28,7 @@ const Footer = () => {
   const y = useTransform(scrollYProgress, [0, 1], [-600, 0]);
 
   return (
-    <motion.footer ref={container} className="w-full h-screen bg-black py-16 text-light text-sm overflow-hidden">
+    <motion.footer ref={container} className="w-full h-screen bg-black py-16 text-light text-sm overflow-hidden px-10">
       <motion.div
         style={{y}}
         className="h-full"
@@ -47,7 +48,9 @@ const Footer = () => {
               <h3 className="underline">+(57) 1 304 380 7406</h3>
             </div>
             <div>
-            <Button href='/contact' buttonColor="light" variant="bordered" hoverColor="bg-primary">ASK ME</Button>
+              <Link href='/contact'>
+                <Button buttonColor="light" variant="bordered" hoverColor="bg-primary">ASK ME</Button>
+              </Link>
             </div>
           </div>
           <div className="flex justify-between">
@@ -61,25 +64,25 @@ const Footer = () => {
               </div>
               <ul className="flex gap-8">
                 <motion.li whileHover="hover">
-                  <a href="https://www.linkedin.com/in/juancodeaudio/" className="flex items-center gap-1">
+                  <a href="https://www.linkedin.com/in/juancodeaudio/" target="_blank" className="flex items-center gap-1">
                     LinkedIn
                     <motion.div variants={arrow}><ArrowUpRightIcon className="h-4 w-4" /></motion.div>
                   </a>
                 </motion.li>
                 <motion.li whileHover="hover">
-                  <a href="https://github.com/juancodeaudio" className="flex items-center gap-1">
+                  <a href="https://github.com/juancodeaudio" target="_blank" className="flex items-center gap-1">
                     Github
                     <motion.div variants={arrow}><ArrowUpRightIcon className="h-4 w-4" /></motion.div>
                   </a>
                 </motion.li>
                 <motion.li whileHover="hover">
-                  <a href="https://www.instagram.com/juancodeaudio/" className="flex items-center gap-1">
+                  <a href="https://www.instagram.com/juancodeaudio/" target="_blank" className="flex items-center gap-1">
                     Instagram
                     <motion.div variants={arrow}><ArrowUpRightIcon className="h-4 w-4" /></motion.div>
                   </a>
                 </motion.li>
                 <motion.li whileHover="hover">
-                  <a href="https://www.linkedin.com/in/juancodeaudio/" className="flex items-center gap-1">
+                  <a href="https://www.linkedin.com/in/juancodeaudio/" target="_blank" className="flex items-center gap-1">
                     X
                     <motion.div variants={arrow}><ArrowUpRightIcon className="h-4 w-4" /></motion.div>
                   </a>

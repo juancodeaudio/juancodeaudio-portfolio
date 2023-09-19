@@ -1,11 +1,11 @@
 'use client'
-import Link from "next/link";
+
 import { cva } from "class-variance-authority";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { IButtonProps } from "@/lib/types";
 
-const button = cva("w-64 h-16 relative overflow-hidden", {
+const button = cva("w-64 h-16 relative overflow-hidden flex justify-center items-center", {
   variants: {
     buttonColor: {
       dark: "bg-dark text-light border-dark",
@@ -14,7 +14,7 @@ const button = cva("w-64 h-16 relative overflow-hidden", {
     },
     variant: {
       bordered: "bg-transparent border hover:text-light",
-      flat:"border-transparent hover:text-light"
+      flat:"border-transparent hover:text-dark"
     },
     disabled: {
       true: "opacity-30"
@@ -57,7 +57,7 @@ const button = cva("w-64 h-16 relative overflow-hidden", {
   }
 });
 
-const Button: React.FC<IButtonProps> = ({ children, href, buttonColor, variant, disabled, hoverColor }) => {
+const Button: React.FC<IButtonProps> = ({ children, buttonColor, variant, disabled, hoverColor, size }) => {
   
   const parent = {
     variantA: { scale: 1, x: -50, opacity: 0 },
@@ -76,9 +76,11 @@ const Button: React.FC<IButtonProps> = ({ children, href, buttonColor, variant, 
   }
 
   return (
-    <Link href={href}>
       <motion.button 
-        className={twMerge(button({buttonColor, variant, disabled}))}
+        className={twMerge(
+          button({buttonColor, variant, disabled}),
+          size === "sm" ? "w-16 rounded-full" : ""
+        )}
         variants={parent}
         initial="variantA"
         whileInView="animate"
@@ -88,16 +90,15 @@ const Button: React.FC<IButtonProps> = ({ children, href, buttonColor, variant, 
           delay: 0.4,
           duration: 1
         }}
-        // viewport={{ once: true }}
+        viewport={{ once: true }}
       >
         <motion.div
           className={`${hoverColor} absolute left-[-15px] w-72 h-48 rounded-full`}
           variants={childBG} 
           transition={{duration: 0.4}}
         ></motion.div>
-        <motion.p variants={childTX}>{children}</motion.p>
+        <motion.p variants={childTX} className="flex items-center gap-4">{children}</motion.p>
       </motion.button>
-    </Link>
   )
 }
 

@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import WidthLayout from '@/common/WidthLayout'
+import WidthLayout from '@/app/_common/WidthLayout'
 import Logo from './Logo'
 import ThemeButton from './ThemeButton'
 import MagneticComponent from '@/common/MagneticComponent'
@@ -40,7 +40,7 @@ const Navbar = () => {
 
   return (
     <motion.header
-      className='fixed top-0 left-0 h-24 py-4 backdrop-blur-lg bg-black/30 w-full z-[9999] shadow-lg'
+      className='fixed top-0 left-0 h-24 py-4 backdrop-blur-lg bg-black/30 w-full z-[9999] shadow-lg px-10'
       variants={headerVariants}
       initial="initial"
       animate={hidden ? "hidden" : "visible"}

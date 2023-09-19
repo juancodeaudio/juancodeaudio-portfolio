@@ -54,7 +54,7 @@ export const Title: React.FC<TitleProps>  = ({text, className}) => {
       initial='initial'
       whileInView='animate'
     >
-      {text.split(" ").map((word, i) => (
+      {text?.split(" ").map((word, i) => (
         <motion.span
           key={i}
           className='inline-block mr-5 whitespace-nowrap overflow-hidden'
@@ -96,7 +96,13 @@ export const Title2: React.FC<TitleProps> = ({text, className, y=0}) => {
     }
   }
 
-  const { splittedWords } = splitSentences(text);
+  let splittedSentences;
+  if(text) {
+    splittedSentences = splitSentences(text);
+  } else {
+    splittedSentences = splitSentences("");
+  }
+  const { splittedWords } = splittedSentences;
 
   return (
     <motion.h2
@@ -150,7 +156,13 @@ export const Title3: React.FC<TitleProps> = ({text, className, y=0}) => {
     }
   }
 
-  const { splittedWords } = splitSentences(text);
+  let splittedSentences;
+  if(text) {
+    splittedSentences = splitSentences(text);
+  } else {
+    splittedSentences = splitSentences("");
+  }
+  const { splittedWords } = splittedSentences;
 
   return (
     <motion.h3
