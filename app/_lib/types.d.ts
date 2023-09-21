@@ -42,3 +42,20 @@ export interface columnProps {
 export interface galleryProps {
   imageSize: 'lg' | 'sm'
 }
+
+export interface projectDataTypes {
+  id: number,
+  slug: string,
+  name: string,
+  description: string,
+  techStack: string[],
+  year: number,
+  demo: string,
+  repo: string,
+  src: string,
+  videos: string[],
+  altImages: string[],
+  background: string,
+  secondBackground: string,
+  foreground: "dark" | "light"
+}

@@ -172,18 +172,19 @@ const Contact = () => {
                 <label htmlFor="message">
                   <Title2 text="MESSAGE" />
                 </label>
-                <motion.input
+                <motion.textarea
                   variants={inputs}
                   initial="initial"
                   whileInView="animate"
                   whileHover="hover"
                   whileFocus="focus"
                   style={{originY: 1, originX: 0}}
+                  maxLength={250}
                   viewport={{
                     margin: '0px 0px -20% 0px', 
                     once: true 
                   }}
-                  type="text"
+                  // type="text"
                   id="message"
                   placeholder="Hello Juan, I'm looking for... *"
                   required

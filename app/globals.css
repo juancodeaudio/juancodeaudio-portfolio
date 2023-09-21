@@ -25,4 +25,7 @@
   input {
     @apply h-28 bg-transparent border-b focus:outline-none focus:border-primary focus:border-b-2;
   }
+  textarea {
+    @apply h-40 bg-transparent border-b focus:outline-none focus:border-primary focus:border-b-2 resize-none pt-10 pb-5 align-sub;
+  }
 }
