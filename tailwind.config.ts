@@ -29,9 +29,9 @@ const config: Config = {
   plugins: [
     createThemes({
       light:{
-        'background': '#f5f5f5',
-        'alt-background': '#f5f5f5',
-        'foreground': '#1b1b1b',
+        'background': '#1b1b1b',
+        'alt-background': '#1b1b1b',
+        'foreground': '#f5f5f5',
         'primary': '#0891b2',
         'danger': '#be123c',
         'error': '#be123c'

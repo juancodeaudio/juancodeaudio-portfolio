@@ -19,10 +19,17 @@ export default function Home() {
     }
 
     requestAnimationFrame(raf)
+
+    //stop lenis 
+lenis.stop();
+
+//reload lenis animations
+
+lenis.start();
   }, [])
 
   return (
-    <main className='overflow-hidden'>
+    <main>
       <WidthLayout>  
         <Landing />
         <DescriptionLanding />

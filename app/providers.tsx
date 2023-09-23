@@ -9,7 +9,7 @@ type Props = {
 
 const Providers = ({children}: Props) => {
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider attribute="class" defaultTheme = 'dark'>
       {children}
       <Toaster position='top-right' richColors expand closeButton />
     </ThemeProvider>
