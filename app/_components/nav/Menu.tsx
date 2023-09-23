@@ -3,7 +3,12 @@ import styles from './style.module.css'
 import SideMenu from './SideMenu';
 import { AnimatePresence } from 'framer-motion';
 
-const Menu = ({isActive, setIsActive}) => {
+type Props = {
+  isActive: boolean,
+  setIsActive: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const Menu: React.FC<Props> = ({isActive, setIsActive}) => {
   return (
     <>
     <div className={`${isActive ? 'absolute': 'absolute'} right-4 z-[9999] top-3`}>
