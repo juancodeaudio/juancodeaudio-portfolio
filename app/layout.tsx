@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" style={{ colorScheme: 'dark'}}>
-      <body className={`${montserrat.className} ${neue.variable} ${neima.variable} ${okine.variable} overflow-hidden`}>
+      <body className={`${montserrat.className} ${neue.variable} ${neima.variable} ${okine.variable}`}>
         <Providers>
           <Navbar />
           {children}

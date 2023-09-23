@@ -10,23 +10,23 @@ import Link from 'next/link'
 
 export default function Home() {
 
-  useEffect(() => {
-    const lenis = new Lenis()
+  // useEffect(() => {
+  //  const lenis = new Lenis()
 
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
+  //  function raf(time: number) {
+  //    lenis.raf(time)
+  //    requestAnimationFrame(raf)
+  //  }
 
-    requestAnimationFrame(raf)
+  //  requestAnimationFrame(raf)
 
     //stop lenis 
-lenis.stop();
+//lenis.stop();
 
 //reload lenis animations
 
-lenis.start();
-  }, [])
+//lenis.start();
+//  }, [])
 
   return (
     <main>
