@@ -1,6 +1,7 @@
-import WidthLayout from "@/app/_common/WidthLayout"
-import MainAboutSection from "@/components/MainAboutSection"
-import ServicesSection from "@/components/ServicesSection"
+import WidthLayout from "@/common/WidthLayout"
+import MainAboutSection from "@/components/about/MainAboutSection"
+import ServicesSection from "@/components/about/ServicesSection"
+import TechSection from "@/components/about/TechSection"
 
 const About = () => {
   return (
@@ -8,7 +9,7 @@ const About = () => {
       <WidthLayout>
         <MainAboutSection />
         <ServicesSection />
-        <div className='h-screen bg-red-200 pt-24 flex justify-center'>TECHNOLOGIES SECTION</div>
+        <TechSection />
       </WidthLayout>
     </main>
   )

@@ -51,9 +51,8 @@ const Column: React.FC<columnProps> = ({columnProjects, imageSize, y=0, classNam
   return (
     <motion.div 
       className={twJoin(
-        'relative h-full flex flex-col gap-4 odd:top-[-45%] even:top-[-95%] last:top-[-85%]',
+        'relative h-[100vh] sm:h-[120vh] md:h-[150vh] flex flex-col gap-4 odd:top-[-45%] even:top-[-95%] last:top-[-85%]',
         className,
-        imageSize === 'lg' ? 'w-1/2 lg:w-1/3' : 'w-1/4',
       )}
       style={{ y }}
       variants={columnVariants}
@@ -71,7 +70,7 @@ const Column: React.FC<columnProps> = ({columnProjects, imageSize, y=0, classNam
           >
             <Link href={`/projects/${project.projectUrl}`}>
               <video
-                src={project.videoSrc ? `/images/projects/${project.projectUrl}/${project.videoSrc}` : ''}
+                src={project.videoSrc ? `/images/projects/${project.projectUrl}/${project.videoSrc}` : undefined}
                 poster={`/images/projects/${project.projectUrl}/${project.imageSrc}`}
                 className='w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer bg-background'
                 loop
@@ -80,12 +79,6 @@ const Column: React.FC<columnProps> = ({columnProjects, imageSize, y=0, classNam
                 playsInline
                 controls={false}
               />
-              {/* <Image 
-                className='object-cover hover:scale-110 transition duration-500 cursor-pointer bg-background'
-                src={`/images/projects/${project.projectUrl}/${project.imageSrc}`}
-                alt='image'
-                fill
-              /> */}
             </Link>
           </motion.div>
           )
@@ -98,38 +91,24 @@ const Column: React.FC<columnProps> = ({columnProjects, imageSize, y=0, classNam
 const ProjectsGallery: React.FC<galleryProps> = ({ imageSize }) => {
 
   const gallery = useRef(null)
-  const [dimension, setDimension] = useState({width:0, height:0});
   const { scrollYProgress } = useScroll({
     target: gallery,
     offset: ['start end', 'end start']
   })
-  const { height } = dimension;
-  const y = useTransform(scrollYProgress, [0, 1], [0, height * 1.9])
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.45])
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.35])
-  const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3.5])
-
-  useEffect( () => {
-    const resize = () => {
-      setDimension({width: window.innerWidth, height: window.innerHeight})
-    }
-    window.addEventListener("resize", resize)
-    resize();
-
-    return () => {
-      window.removeEventListener("resize", resize);
-    }
-  }, [])
+  const y = useTransform(scrollYProgress, [0, 1], ['35%', '25%'])
+  const y2 = useTransform(scrollYProgress, [0, 1], ['10%', '170%'])
+  const y3 = useTransform(scrollYProgress, [0, 1], ['48%', '18%'])
+  const y4 = useTransform(scrollYProgress, [0, 1], ['0%', '350%'])
   
   return (
-    <section ref={gallery} className='flex m-auto'>
-      <div className={`h-[190vh] ${imageSize === 'lg' ? 'px-5' : 'px-16'} w-full  bg-foreground relative flex gap-5 py-16 overflow-hidden`}>
+    <section ref={gallery} className='relative h-[50vh] sm:h-[60vh] md:h-screen flex m-auto overflow-hidden'>
+      <div className={`h-[145vh] sm:h-[165vh] md:h-[190vh] ${imageSize === 'lg' ? 'px-5' : 'px-16'} w-[180vw] sm:w-[160vw] md:w-full lg:w-[150vw] xl:w-full bg-foreground absolute -left-[40vw] sm:-left-[25vw] md:left-0 lg:-left-[25vw] xl:left-0 top-0 bottom-0 flex gap-5 py-16 overflow-y-hidden`}>
         {
           imageSize === 'lg' ? (
             <>
-              <Column imageSize={imageSize} y={y} columnProjects={columnProjects[0]} />
+              <Column imageSize={imageSize} y={y} columnProjects={columnProjects[0]} className='hidden lg:flex' />
               <Column imageSize={imageSize} y={y2} columnProjects={columnProjects[1]} />
-              <Column imageSize={imageSize} y={y3} columnProjects={columnProjects[2]} className='hidden lg:flex' />
+              <Column imageSize={imageSize} y={y3} columnProjects={columnProjects[2]} />
             </>
           ) : (
             <>

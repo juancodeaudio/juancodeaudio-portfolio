@@ -15,13 +15,13 @@ const DescriptionLanding = () => {
   const y2 = useTransform(scrollYProgress, [0, 1], [60, -60])
   
   return (
-    <section ref={ref} className='bg-background grid grid-cols-12 auto-rows-fr grid-rows-12 gap-6 py-32 max-w-8xl m-auto px-10'>
+    <section ref={ref} className='bg-background grid grid-cols-12 auto-rows-fr grid-rows-12 gap-6 pt-32 pb-16 xl:pb-32 max-w-8xl m-auto px-10 gap-y-20 xl:gap-y-0'>
       <Title3 
         y={y}
         text="EACH PROJECT IS AN OPPORTUNITY TO EVOLVE TECHNOLOGY AND CREATE NEW IMPOSSIBLE THINGS"
-        className="col-start-2 col-span-6 row-start-1 row-span-3 text-right font-medium"
+        className="col-start-1 xl:col-start-2 col-span-12 xl:col-span-6 row-start-1 row-span-2 xl:row-span-3 text-left xl:text-right font-medium"
       />
-      <motion.div style={{y}} className="col-start-2 col-span-6 row-start-6 row-span-2 justify-end flex flex-col gap-8">
+      <motion.div style={{y}} className="col-start-1 xl:col-start-2 col-span-12 xl:col-span-6 row-start-5 row-span-2 justify-center xl:justify-end flex flex-col gap-8">
         <Paragraph className="text-right">
           The combination of my passion for technology, arts and design creates a unique profile in the software development field. When I’m not creating beautiful software experiences, you can find me learning new things like languages, video or audio production or even cooking.
         </Paragraph>
@@ -32,9 +32,9 @@ const DescriptionLanding = () => {
       <Title3 
         y={y2}
         text="PASSIONATE ABOUT WORKING AT THE INTERSECTION OF CREATIVITY AND CUTTING EDGE TECHNOLOGY"
-        className="col-start-9 col-span-4 row-start-3 row-span-4"
+        className="col-start-2 xl:col-start-9 col-span-11 xl:col-span-4 row-start-3 row-span-2 xl:row-span-4 text-right xl:text-left"
       />
-      <motion.div style={{ y: y2 }} className="col-start-9 col-span-4 row-start-7 row-span-1 justify-end flex flex-col">
+      <motion.div style={{ y: y2 }} className="col-start-1 xl:col-start-9 col-span-12 xl:col-span-4 row-start-7 row-span-1 items-center xl:items-start justify-end flex flex-col">
         <Link href="/about">
           <Button buttonColor="light" hoverColor="bg-primary">
             ABOUT ME

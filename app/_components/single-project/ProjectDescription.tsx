@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Title3 } from "../_common/TextStyles"
+import { Title3 } from "@/common/TextStyles"
 
 type Props= {
   description: string,

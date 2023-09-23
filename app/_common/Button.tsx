@@ -13,7 +13,7 @@ const button = cva("w-64 h-16 relative overflow-hidden flex justify-center items
       error: "bg-error text-light border-error"
     },
     variant: {
-      bordered: "bg-transparent border hover:text-light",
+      bordered: "bg-transparent border hover:text-dark font-bold",
       flat:"border-transparent hover:text-dark"
     },
     disabled: {

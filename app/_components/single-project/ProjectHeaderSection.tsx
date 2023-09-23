@@ -19,8 +19,8 @@ const ProjectHeaderSection: React.FC<Props> = ({ background, foreground, name, t
     target: ref,
     offset: ["start end", "end start"]
   });
-  const headerTitleY = useTransform(scrollYProgress, [0, 1], [40, -100])
-  const headerInfoY = useTransform(scrollYProgress, [0, 1], [-40, 60])
+  const headerTitleY = useTransform(scrollYProgress, [0, 1], [40, -80])
+  const headerInfoY = useTransform(scrollYProgress, [0, 1], [-60, 50])
 
   return (
     <motion.section
@@ -32,7 +32,7 @@ const ProjectHeaderSection: React.FC<Props> = ({ background, foreground, name, t
         }
       }}
       ref={ref}
-      className={twJoin('pt-36 sm:pt-56 flex flex-col gap-0 md:gap-10 w-full pb-16 sm:pb-28 px-12 md:px-10',
+      className={twJoin('pt-56 flex flex-col gap-0 md:gap-10 w-full pb-16 sm:pb-28 px-12 md:px-10 justify-between',
       background,
       foreground === 'dark' ? 'text-background': 'text-foreground'
       )}
@@ -61,21 +61,21 @@ const ProjectHeaderSection: React.FC<Props> = ({ background, foreground, name, t
       >
         <div className="w-56">
           <div className={twJoin(
-            "pb-5 opacity-50 border-b text-sm",
+            "pb-2 lg:pb-5 opacity-50 border-b text-xs",
             foreground === 'dark' ? 'border-background': 'border-foreground'
             )}>
             ROLE
           </div>
-          <Paragraph className="tex text-sm pt-5">Tech</Paragraph>
+          <Paragraph className="tex text-sm pt-2 lg:pt-5">Tech</Paragraph>
         </div>
         <div className="w-56">
           <div className={twJoin(
-            "pb-5 opacity-50 border-b text-sm",
+            "pb-2 lg:pb-5 opacity-50 border-b text-xs",
             foreground === 'dark' ? 'border-background': 'border-foreground'
             )}>
             BUILT WITH
           </div>
-          <div className="flex flex-row flex-wrap gap-3 pt-5">
+          <div className="flex flex-row flex-wrap gap-1 lg:gap-3 pt-2 lg:pt-5">
             {techStack.map((tech) => (
               <div key={tech} className={twJoin(
                 "py-1 px-4 rounded-full bg-foreground/20",
@@ -88,12 +88,12 @@ const ProjectHeaderSection: React.FC<Props> = ({ background, foreground, name, t
         </div>
         <div className="w-56">
           <div className={twJoin(
-            "pb-5 opacity-50 border-b text-sm",
+            "pb-2 lg:pb-5 opacity-50 border-b text-xs",
             foreground === 'dark' ? 'border-background': 'border-foreground'
             )}>
             YEAR
           </div>
-          <Paragraph className="tex text-sm pt-5">{year}</Paragraph>
+          <Paragraph className="tex text-sm pt-2 lg:pt-5">{year}</Paragraph>
         </div>
       </motion.div>
     </motion.section>

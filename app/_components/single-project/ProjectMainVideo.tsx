@@ -21,7 +21,7 @@ const ProjectMainVideo: React.FC<Props> = ({ videos, slug, src, info }) => {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, 150])
 
   return (
-    <motion.section ref={ref} className="relative w-full flex justify-center pt-96 pb-20">
+    <motion.section ref={ref} className="relative w-full flex justify-center pt-48 lg:pt-96 pb-8 lg:pb-20">
       <motion.div
         initial={{
           y: 200, opacity: 0
@@ -40,7 +40,7 @@ const ProjectMainVideo: React.FC<Props> = ({ videos, slug, src, info }) => {
       >
         <motion.video
           style={{y: y}}
-          src={videos[0] ? `/images/projects/${slug}/${videos[0]}` : ''}
+          src={videos[0] ? `/images/projects/${slug}/${videos[0]}` : undefined}
           poster={`/images/projects/${slug}/${src}`}
           className='bg-background'
           width={1300}
@@ -62,7 +62,7 @@ const ProjectMainVideo: React.FC<Props> = ({ videos, slug, src, info }) => {
             // delay: 1
           }
         }}
-        className={`w-1/5 h-screen absolute top-20 right-[10%] bg-neutral-800/60 backdrop-blur-2xl rounded-lg shadow-xl p-8 pt-24`}>
+        className={`hidden lg:block w-1/5 h-screen absolute top-20 right-[10%] bg-neutral-800/60 backdrop-blur-2xl rounded-lg shadow-xl p-8 pt-24`}>
         <Title3 text='VISION' className='mb-10' />
         <Paragraph>{info}</Paragraph>
       </motion.div>

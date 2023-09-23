@@ -14,12 +14,12 @@ const ServicesSection = () => {
   const y2 = useTransform(scrollYProgress, [0, 1], [200, -200])
 
   return (
-    <section ref={ref} className='h-screen pb-24 flex justify-center gap-10'>
+    <section ref={ref} className='lg:h-screen pb-24 flex flex-col lg:flex-row justify-center gap-56 lg:gap-10'>
       <motion.div
-        className="h-full w-1/2 text-center px-32 flex flex-col gap-6 justify-center"
+        className="h-full w-ful lg:w-1/2 text-center px-5 lg:px-32 flex flex-col gap-6 justify-center"
         style={{y: y}}
       >
-        <Title2 text="CREATE" className="mb-10" />
+        <Title2 text="CREATE" className="mb-0 lg:mb-10" />
         <Paragraph>
           I plan, design, build and test amazing scalable front end web applications.
         </Paragraph>
@@ -28,10 +28,10 @@ const ServicesSection = () => {
         </Paragraph>
       </motion.div>
       <motion.div
-        className="h-full w-1/2 text-center px-32 flex flex-col gap-6"
+        className="h-full w-ful lg:w-1/2 text-center px-5 lg:px-32 flex flex-col gap-6 justify-center"
         style={{y: y2}}
       >
-        <Title2 text="EVOLVE" className="mb-10" />
+        <Title2 text="EVOLVE" className="mb-0 lg:mb-10" />
         <Paragraph>
           I build creative layouts and innovative interactions that are optimized for the best usability and performance.
         </Paragraph>

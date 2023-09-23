@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 import { Montserrat } from 'next/font/google'
 import localFont from 'next/font/local'
 import Providers from '@/app/providers'
-import Navbar from '@/components/Navbar'
+import Navbar from '@/app/_components/nav/Navbar'
 import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" style={{ colorScheme: 'dark'}}>
-      <body className={`${montserrat.className} ${neue.variable} ${neima.variable} ${okine.variable}`}>
+      <body className={`${montserrat.className} ${neue.variable} ${neima.variable} ${okine.variable} overflow-hidden`}>
         <Providers>
           <Navbar />
           {children}

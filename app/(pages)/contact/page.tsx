@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import WidthLayout from "@/common/WidthLayout"
 import { Title } from "@/common/TextStyles"
-import ContactForm from "@/components/ContactForm"
+import ContactForm from "@/components/contact/ContactForm"
 import { ArrowDownIcon } from "@/common/icons"
 
 const arrowVariants = {
@@ -45,7 +45,7 @@ const Contact = () => {
       <WidthLayout>
         <section className='relative pt-64 pb-24 flex flex-col justify-center gap-16 items-center'>
           <Title className="text-center mb-20" text="Contact Me" />
-          <div className="absolute top-[590px] right-1/4 h-24 w-10 flex justify-center overflow-hidden">
+          <div className="absolute top-80 sm:top-[340px] md:top-[450px] xl:top-[590px] right-1/4 h-24 w-10 flex justify-center overflow-hidden">
             <motion.div variants={arrowVariants} initial="initial" animate="animate">
               <ArrowDownIcon className="h-12 w-12" />
             </motion.div>

@@ -30,7 +30,7 @@ const ProjectsLanding = () => {
           <ArrowDownIcon className="h-12 w-12" />
         </motion.div>
       </div>
-      <div className="flex gap-16 mb-28">
+      <div className="flex flex-col md:flex-row gap-6 md:gap-16 mb-28 items-center">
         <a href="/CV.pdf" download="Juan Pablo Alvarado - CV">
           <Button buttonColor="light" hoverColor="bg-primary">Download CV <CiSaveDown2 className="h-6 w-6 inline" /></Button>
         </a>

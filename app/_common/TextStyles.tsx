@@ -64,7 +64,7 @@ export const Title: React.FC<TitleProps>  = ({text, className}) => {
           {word.split("").map((char, j) => (
             <motion.span
               key={j}
-              className='inline-block pt-9 pb-12'
+              className='inline-block pt-4 md:pt-9 pb-6 md:pb-12'
               aria-hidden="true"
               variants={charVariants}
             >
@@ -85,7 +85,7 @@ export const Title2: React.FC<TitleProps> = ({text, className, y=0}) => {
   }
   const wordVariants = {
     initial: {
-      y: '100%',
+      y: '110%',
     },
     animate: {
       y: 0,
@@ -122,7 +122,7 @@ export const Title2: React.FC<TitleProps> = ({text, className, y=0}) => {
         <span
           key={i}
           aria-hidden="true"
-          className='inline-block whitespace-nowrap overflow-hidden'
+          className='inline-block whitespace-nowrap overflow-hidden pb-3'
         >
           <motion.span
             className='inline-block'
@@ -145,7 +145,7 @@ export const Title3: React.FC<TitleProps> = ({text, className, y=0}) => {
   }
   const wordVariants = {
     initial: {
-      y: '100%',
+      y: '130%',
     },
     animate: {
       y: 0,
@@ -182,7 +182,7 @@ export const Title3: React.FC<TitleProps> = ({text, className, y=0}) => {
         <span
           key={i}
           aria-hidden="true"
-          className='inline-block whitespace-nowrap overflow-hidden'
+          className='inline-block whitespace-nowrap overflow-hidden pb-0 md:pb-5'
         >
           <motion.span
             className='inline-block'

@@ -86,10 +86,10 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit(processForm)}
-      className='pb-24 flex flex-col justify-center gap-16 items-center'
+      className='pb-24 flex flex-col justify-center gap-0 lg:gap-16 items-center'
     >
-      <div ref={ref}  className="flex w-full mb-28">
-        <motion.div style={{y: y}} className="w-1/2 px-24 flex flex-col gap-10">
+      <div ref={ref}  className="flex flex-col lg:flex-row w-full mb-28 gap-32 lg:gap-0">
+        <motion.div style={{y: y}} className="w-full lg:w-1/2 px-8 sm:px-16 md:px-24 lg:px-16 flex flex-col gap-10">
           <div className="flex flex-col">
             <label htmlFor="name">
               <Title2 text="NAME" />
@@ -163,7 +163,7 @@ const ContactForm = () => {
             )}
           </div>
         </motion.div>
-        <motion.div style={{y: y2}} className="w-1/2 px-24 flex flex-col gap-10">
+        <motion.div style={{y: y2}} className="w-full lg:w-1/2 px-8 sm:px-16 md:px-24 lg:px-16 xl:px-24 flex flex-col gap-10">
           <div className="flex flex-col">
             <label htmlFor="service">
               <Title2 text="SERVICE" />

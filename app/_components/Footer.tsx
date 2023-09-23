@@ -2,8 +2,8 @@
 import { useRef } from "react"
 import { useTransform, useScroll, motion } from "framer-motion"
 import Button from "@/common/Button"
-import WidthLayout from "@/app/_common/WidthLayout"
-import Logo from "./Logo"
+import WidthLayout from "@/common/WidthLayout"
+import Logo from "@/common/Logo"
 import { Title2 } from "@/common/TextStyles"
 import { ArrowUpRightIcon } from "@/common/icons"
 import Link from "next/link"
@@ -28,24 +28,29 @@ const Footer = () => {
   const y = useTransform(scrollYProgress, [0, 1], [-600, 0]);
 
   return (
-    <motion.footer ref={container} className="w-full h-screen bg-black py-16 text-light text-sm overflow-hidden px-10">
+    <motion.footer ref={container} className="w-full h-screen bg-black py-8 md:py-12 text-light text-sm overflow-hidden px-5 md:px-10">
       <motion.div
         style={{y}}
         className="h-full"
       >
         <WidthLayout className="flex flex-col justify-between">
-          <div className="flex gap-12 px-12 mt-24">
-            <Logo />
+          <div className="flex gap-4 items-center lg:gap-12 lg:px-12 mt-24">
+            <Logo className="hidden lg:flex" />
             <Title2 
               text="SAY HELLO"
               className="opacity-50"
             />
             {/* <h2 className="opacity-50">SAY HELLO</h2> */}
           </div>
-          <div className="py-10 mb-16 flex justify-between mx-28 px-4 items-center border-t border-light/50">
+          <div className="py-10 pt-20 gap-16 lg:mb-16 flex flex-col xl:flex-row justify-between lg:mx-28 lg:px-4 items-center border-t border-light/50">
             <div className="flex flex-col gap-12">
-              <h3 className="underline">alvaradovallejo.juan@gmail.com</h3>
-              <h3 className="underline">+(57) 1 304 380 7406</h3>
+              <a href="mailto:hello@juancodeaudio.com">
+                <Title2 className="underline uppercase text-center xl:text-left" text="hello@"/>
+                <div className="flex flex-col md:flex-row">
+                  <Title2 className="underline uppercase text-center lg:text-left" text="juancode"/>
+                  <Title2 className="underline uppercase text-center lg:text-left" text="audio.com"/>
+                </div>
+              </a>
             </div>
             <div>
               <Link href='/contact'>
@@ -53,16 +58,16 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          <div className="flex justify-between">
-            <div>
-              <div className="pb-3 opacity-50">INFO</div>
+          <div className="flex justify-between flex-col md:flex-row gap-6">
+            <div className="border-b pb-8 md:border-none md:pb-0 border-foreground/50">
+              <div className="pb-3 opacity-50 text-xs">INFO</div>
               <div>Copyright © 2023 | Coded by juancodeaudio</div>
             </div>
             <div>
-              <div className="pb-3 opacity-50">
+              <div className="pb-3 opacity-50 text-xs">
                 SOCIALS
               </div>
-              <ul className="flex gap-8">
+              <ul className="flex gap-4 md:gap-8">
                 <motion.li whileHover="hover">
                   <a href="https://www.linkedin.com/in/juancodeaudio/" target="_blank" className="flex items-center gap-1">
                     LinkedIn

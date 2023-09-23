@@ -17,11 +17,11 @@ const ImageProjectSection: React.FC<Props> = ({ secondBackground, slug, altImage
     target: ref,
     offset: ["start end", "end start"]
   });
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100])
+  const y = useTransform(scrollYProgress, [0, 1], [50, -50])
 
   return (
-    <section ref={ref} className="flex flex-col md:flex-row w-full justify-center bg-foreground/5">
-      <div className={`h-full w-full md:w-1/2 flex justify-center ${secondBackground} py-10 md:py-48 px-5`}>
+    <section className="flex flex-col md:flex-row w-full justify-center bg-foreground/5">
+      <div ref={ref} className={`h-full w-full md:w-1/2 flex justify-center ${secondBackground} py-28 md:py-48 px-5`}>
         <motion.div style={{y}}>
           <Image
             src={`/images/projects/${slug}/${altImages[0]}`}
@@ -32,7 +32,7 @@ const ImageProjectSection: React.FC<Props> = ({ secondBackground, slug, altImage
           />
         </motion.div>
       </div>
-      <div className={`h-full w-full md:w-1/2 flex justify-center ${background} py-10 md:py-48 px-5`}>
+      <div className={`h-full w-full md:w-1/2 flex justify-center ${background} py-28 md:py-48 px-5`}>
         <motion.div style={{y}}>
           <Image
             src={`/images/projects/${slug}/${altImages[0]}`}

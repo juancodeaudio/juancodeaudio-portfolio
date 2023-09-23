@@ -77,7 +77,7 @@ export const projectsData = [
   {
     id: 5,
     slug: "powell-studio",
-    name: "POWELL—STUDIO",
+    name: "Powell—Studio",
     description: "The online presence for Powell—Studio.",
     info: "",
     techStack: ["Next JS", "Tailwind CSS"],
@@ -94,7 +94,7 @@ export const projectsData = [
   {
     id: 6,
     slug: "rocketpanda",
-    name: "ROCKETPANDA",
+    name: "Rocket Panda",
     description: "An Italian animation studio.",
     info: "",
     techStack: ["Next JS", "Tailwind CSS"],

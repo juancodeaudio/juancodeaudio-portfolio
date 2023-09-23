@@ -7,20 +7,20 @@
     @apply font-okine bg-background text-foreground;
   }
   h1 {
-    @apply text-[280px] leading-[0.6] uppercase font-neima text-background;
+    @apply text-7xl md:text-[150px] xl:text-[280px] leading-[0.6] uppercase font-neima text-background;
     -webkit-text-stroke: 1px #f5f5f5;
   }
   h2 {
-    @apply text-7xl tracking-tighter;
+    @apply text-5xl md:text-6xl lg:text-7xl tracking-tighter;
   }
   h3 {
-    @apply text-5xl;
+    @apply text-3xl md:text-4xl lg:text-5xl;
   }
   h4 {
     @apply text-4xl;
   }
   p {
-    @apply text-xl font-thin;
+    @apply text-base md:text-lg lg:text-xl font-thin;
   }
   input {
     @apply h-28 bg-transparent border-b focus:outline-none focus:border-primary focus:border-b-2;

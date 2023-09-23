@@ -26,7 +26,7 @@ const NextProjectSection: React.FC<Props> = ({nextProject}) => {
         style={{y}}
         className="h-full flex flex-col gap-20"
       >
-        <div className="flex w-full justify-between">
+        <div className="flex flex-col lg:flex-row w-full justify-between">
           <div className="flex flex-col gap-4">
             <Paragraph 
               className={projectsData.at(nextProject)?.foreground === 'dark' ? 'text-background/50': 'text-foreground/50'}

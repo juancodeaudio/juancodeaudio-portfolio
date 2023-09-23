@@ -2,9 +2,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import WidthLayout from '@/app/_common/WidthLayout'
-import Logo from './Logo'
-import ThemeButton from './ThemeButton'
+import WidthLayout from '@/common/WidthLayout'
+import Logo from '@/common/Logo'
+import ThemeButton from '@/components/nav/ThemeButton'
 import MagneticComponent from '@/common/MagneticComponent'
 import { links } from "@/lib/data";
 
@@ -57,7 +57,7 @@ const Navbar = () => {
               </Link>
             </MagneticComponent>
           </nav>
-          <nav className='flex gap-8 h-1/2'>
+          <nav className='hidden md:flex gap-8 h-1/2'>
             {links.map((link) => (
                 <Link key={link.href} className='relative h-full hover:opacity-50 transition-all' href={link.href}>
                   <MagneticComponent>

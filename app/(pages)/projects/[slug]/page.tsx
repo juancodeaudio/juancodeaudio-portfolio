@@ -1,12 +1,12 @@
 import { notFound } from "next/navigation"
-import WidthLayout from "@/app/_common/WidthLayout"
+import WidthLayout from "@/common/WidthLayout"
 import { projectsData } from "@/lib/data"
 import Button from "@/common/Button"
-import ProjectHeaderSection from "@/components/ProjectHeaderSection"
-import ProjectMainVideo from "@/components/ProjectMainVideo"
-import ProjectDescription from "@/components/ProjectDescription"
-import ImageProjectSection from "@/components/ImageProjectSection"
-import NextProjectSection from "@/components/NextProjectSection"
+import ProjectHeaderSection from "@/components/single-project/ProjectHeaderSection"
+import ProjectMainVideo from "@/components/single-project/ProjectMainVideo"
+import ProjectDescription from "@/components/single-project/ProjectDescription"
+import ImageProjectSection from "@/components/single-project/ImageProjectSection"
+import NextProjectSection from "@/components/single-project/NextProjectSection"
 import { FaGithub } from "react-icons/fa6";
 import { CiShare1 } from "react-icons/ci";
 
@@ -51,7 +51,7 @@ const Projects = ({params}: {params: {slug: string}}) => {
           altImages={projectData.altImages}
           background={projectData.background}
         />
-        <section className="flex flex-col md:flex-row gap-10 py-20">
+        <section className="flex flex-col md:flex-row gap-6 md:gap-10 py-10 md:py-20">
           <a href={projectData.demo} target="_blank">
             <Button
               buttonColor="light" hoverColor="bg-primary"
