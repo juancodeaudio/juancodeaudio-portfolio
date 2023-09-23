@@ -9,7 +9,7 @@ const About = () => {
       <WidthLayout>
         <MainAboutSection />
         <ServicesSection />
-        <TechSection />
+        {/* <TechSection /> */}
       </WidthLayout>
     </main>
   )

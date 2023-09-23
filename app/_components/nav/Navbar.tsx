@@ -1,11 +1,12 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import WidthLayout from '@/common/WidthLayout'
 import Logo from '@/common/Logo'
 import ThemeButton from '@/components/nav/ThemeButton'
 import MagneticComponent from '@/common/MagneticComponent'
+import Menu from '@/components/nav/Menu'
 import { links } from "@/lib/data";
 
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
@@ -19,6 +20,12 @@ const Navbar = () => {
 
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  const pathname = usePathname();
+
+  useEffect( () => {
+    if(isActive) setIsActive(false)
+  }, [pathname])
 
   function update() {
     if (scrollY?.getVelocity() < 0) {
@@ -29,7 +36,7 @@ const Navbar = () => {
   }
 
   useMotionValueEvent(scrollY, "change", () => {
-    update();
+    !isActive && update();
   })
 
   const headerVariants = {
@@ -40,7 +47,7 @@ const Navbar = () => {
 
   return (
     <motion.header
-      className='fixed top-0 left-0 h-24 py-4 backdrop-blur-lg bg-black/30 w-full z-[9999] shadow-lg px-10'
+      className='fixed top-0 left-0 h-24 py-4 backdrop-blur-lg bg-black/30 w-full z-[9000] shadow-lg px-10'
       variants={headerVariants}
       initial="initial"
       animate={hidden ? "hidden" : "visible"}
@@ -69,6 +76,9 @@ const Navbar = () => {
                 </Link>
             ))}
             {/* <ThemeButton /> */}
+          </nav>
+          <nav className='md:hidden'>
+            <Menu isActive={isActive} setIsActive={setIsActive} />
           </nav>
         </div>
       </WidthLayout>

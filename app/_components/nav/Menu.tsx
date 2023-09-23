@@ -1,32 +1,18 @@
 'use client'
-import styles from './style.module.scss'
-import { useEffect, useState } from 'react';
-// import Nav from './nav';
+import styles from './style.module.css'
+import SideMenu from './SideMenu';
 import { AnimatePresence } from 'framer-motion';
-import { usePathname } from 'next/navigation';
 
-const Menu = () => {
-
-  const [isActive, setIsActive] = useState(false);
-  const pathname = usePathname();
-
-  useEffect( () => {
-    if(isActive) setIsActive(false)
-  }, [isActive, pathname])
-
+const Menu = ({isActive, setIsActive}) => {
   return (
     <>
-    <div className={styles.main}>
-
-      <div className={styles.header}>
-        <div onClick={() => {setIsActive(!isActive)}} className={styles.button}>
-          <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
-        </div>
-      </div>
-
+    <div className={`${isActive ? 'absolute': 'absolute'} right-4 z-[9999] top-3`}>
+      <button onClick={() => {setIsActive(!isActive)}} className="w-[70px] h-[70px] cursor-pointer flex items-center justify-center rounded-full bg-foreground/5">
+        <div className={`w-full ${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
+      </button>
     </div>
     <AnimatePresence mode="wait">
-      {/* {isActive && <Nav />} */}
+      {isActive && <SideMenu />}
     </AnimatePresence>
     </>
   )
