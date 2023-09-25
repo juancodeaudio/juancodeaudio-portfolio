@@ -18,7 +18,7 @@ const DescriptionLanding = () => {
     <section ref={ref} className='bg-background grid grid-cols-12 auto-rows-fr grid-rows-12 gap-6 pt-32 pb-16 xl:pb-32 max-w-8xl m-auto px-10 gap-y-20 xl:gap-y-0'>
       <Title3 
         y={y}
-        text="EACH PROJECT IS AN OPPORTUNITY TO EVOLVE TECHNOLOGY AND CREATE NEW IMPOSSIBLE THINGS"
+        text="EACH PROJECT IS AN OPPORTUNITY TO EVOLVE TECHNOLOGY AND CREATE NEW IMPOSSIBLE SOFTWARE"
         className="col-start-1 xl:col-start-2 col-span-12 xl:col-span-6 row-start-1 row-span-2 xl:row-span-3 text-left xl:text-right font-medium"
       />
       <motion.div style={{y}} className="col-start-1 xl:col-start-2 col-span-12 xl:col-span-6 row-start-5 row-span-2 justify-center xl:justify-end flex flex-col gap-8">
@@ -26,7 +26,7 @@ const DescriptionLanding = () => {
           The combination of my passion for technology, arts and design creates a unique profile in the software development field. When I’m not creating beautiful software experiences, you can find me learning new things like languages, video or audio production or even cooking.
         </Paragraph>
         <Paragraph className="text-right">
-          Anyways you can always <a href="/">CONTACT ME</a>.
+          Look forward to hearing from you. You can always <Link href="/contact">CONTACT ME</Link> any time.
         </Paragraph>
       </motion.div>
       <Title3 

@@ -24,7 +24,7 @@ const ServicesSection = () => {
           I plan, design, build and test amazing scalable front end web applications.
         </Paragraph>
         <Paragraph>
-          My knowledge and expertise in arts give me the tools to create the best looking solutions while imagine new outstanding possibilities. Thanks to that I’m also capable of colaborating with design experts to increase even more the quality of the results of any project.
+          My knowledge and expertise in arts gives me the tools to create the best looking solutions while imagining new outstanding possibilities. I’m also capable of colaborating with design experts to enhance the quality of the project deliverables.
         </Paragraph>
       </motion.div>
       <motion.div
@@ -33,10 +33,11 @@ const ServicesSection = () => {
       >
         <Title2 text="EVOLVE" className="mb-0 lg:mb-10" />
         <Paragraph>
-          I build creative layouts and innovative interactions that are optimized for the best usability and performance.
+          I build creative layouts and innovative web interactions that are optimized for the best usability and performance.
         </Paragraph>
         <Paragraph>
-          I’m compromised on finding always new and better solutions by thinking out of the box. My background in diverse knowledge areas, such as math, physics, music, design or technology, gives me the ability to discover different possibilities even with unusual problems.        </Paragraph>
+          I’m cmotivated to find the latest and best solutions by thinking out of the box. My background in diverse knowledge areas, such as math, physics, music, design or technology, gives me the ability to discover different possibilities even with unique and unusual problems.
+        </Paragraph>
       </motion.div>
     </section>
   )
