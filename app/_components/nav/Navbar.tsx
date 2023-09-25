@@ -28,7 +28,7 @@ const Navbar = () => {
   }, [pathname])
 
   function update() {
-    if (scrollY?.getVelocity() < 0) {
+    if (scrollY?.getVelocity() < 0 || scrollY?.get() < 100) {
       setHidden(false);
     } else if (scrollY?.get() < 2 || scrollY?.getVelocity() > 0) {
       setHidden(true);
