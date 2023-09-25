@@ -36,7 +36,7 @@ export default function Home() {
         <ProjectsGallery imageSize='lg' />
         <div className='bg-background py-16 md:py-24 flex justify-center'>
           <Link href='/projects' >
-            <Button buttonColor="light" variant="bordered" hoverColor='bg-primary'>Look for more projects</Button>
+            <Button buttonColor="light" variant="bordered" hoverColor='bg-primary'>More projects</Button>
           </Link>
         </div>
       </WidthLayout>

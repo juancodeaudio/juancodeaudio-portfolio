@@ -97,7 +97,7 @@ const Button: React.FC<IButtonProps> = ({ children, buttonColor, variant, disabl
           variants={childBG} 
           transition={{duration: 0.4}}
         ></motion.div>
-        <motion.p variants={childTX} className="flex items-center gap-4">{children}</motion.p>
+        <motion.p variants={childTX} className="flex items-center gap-4 uppercase">{children}</motion.p>
       </motion.button>
   )
 }
