@@ -7,6 +7,7 @@ import Logo from "@/common/Logo"
 import { Title2 } from "@/common/TextStyles"
 import { ArrowUpRightIcon } from "@/common/icons"
 import Link from "next/link"
+import { socialMedia } from "@/lib/data"
 
 const Footer = () => {
 
@@ -44,11 +45,15 @@ const Footer = () => {
           </div>
           <div className="py-10 pt-20 gap-16 lg:mb-16 flex flex-col xl:flex-row justify-between lg:mx-28 lg:px-4 items-center border-t border-light/50">
             <div className="flex flex-col gap-12">
-              <a href="mailto:hello@juancodeaudio.com">
-                <Title2 className="underline uppercase text-center xl:text-left" text="hello@"/>
-                <div className="flex flex-col md:flex-row">
-                  <Title2 className="underline uppercase text-center lg:text-left" text="juancode"/>
-                  <Title2 className="underline uppercase text-center lg:text-left" text="audio.com"/>
+              <a href="mailto:hello@juancodeaudio.com" className="relative group">
+                <div className="relative w-[75%] md:w-[38%] m-auto xl:m-0 xl:mr-auto">
+                  <Title2 className="underline uppercase text-center xl:text-left after:bottom-2 after:block after:h-1 lg:after:h-2 after:left-0 after:absolute after:bg-foreground after:w-0 group-hover:after:w-full after:transition-all after:transform after:ease-in-out after:duration-700" text="hello@"/>
+                </div>
+                <div className="flex flex-col md:flex-row relative">
+                  <div className="relative w-auto m-auto xl:m-0 xl:mr-auto">
+                    <Title2 className="underline uppercase text-center lg:text-left after:bottom-2 after:block after:h-1 lg:after:h-2 after:left-0 after:absolute after:bg-foreground after:w-0 group-hover:after:w-full after:transition-all after:transform after:ease-in-out after:duration-700" text="juancode"/>
+                  </div>
+                  <Title2 className="underline uppercase text-center lg:text-left after:bottom-2 after:block after:h-1 lg:after:h-2 after:left-0 after:absolute after:bg-foreground after:w-0 group-hover:after:w-full after:transition-all after:transform after:ease-in-out after:duration-700" text="audio.com"/>
                 </div>
               </a>
             </div>
@@ -68,30 +73,20 @@ const Footer = () => {
                 SOCIALS
               </div>
               <ul className="flex gap-4 md:gap-8">
-                <motion.li whileHover="hover">
-                  <a href="https://www.linkedin.com/in/juancodeaudio/" target="_blank" className="flex items-center gap-1">
-                    LinkedIn
-                    <motion.div variants={arrow}><ArrowUpRightIcon className="h-4 w-4" /></motion.div>
-                  </a>
-                </motion.li>
-                <motion.li whileHover="hover">
-                  <a href="https://github.com/juancodeaudio" target="_blank" className="flex items-center gap-1">
-                    Github
-                    <motion.div variants={arrow}><ArrowUpRightIcon className="h-4 w-4" /></motion.div>
-                  </a>
-                </motion.li>
-                <motion.li whileHover="hover">
-                  <a href="https://www.instagram.com/juancodeaudio/" target="_blank" className="flex items-center gap-1">
-                    Instagram
-                    <motion.div variants={arrow}><ArrowUpRightIcon className="h-4 w-4" /></motion.div>
-                  </a>
-                </motion.li>
-                <motion.li whileHover="hover">
-                  <a href="https://www.linkedin.com/in/juancodeaudio/" target="_blank" className="flex items-center gap-1">
-                    X
-                    <motion.div variants={arrow}><ArrowUpRightIcon className="h-4 w-4" /></motion.div>
-                  </a>
-                </motion.li>
+                {
+                  socialMedia.map((social) => (
+                    <motion.li whileHover="hover" key={social.id} className="relative">
+                      <a
+                        href={social.href}
+                        target="_blank"
+                        className="flex items-center gap-1 after:-bottom-2 after:block after:h-[1px] after:left-1/2 after:absolute after:bg-foreground after:w-0 hover:after:w-full hover:after:left-0 after:transition-all after:transform after:ease-in-out"
+                      >
+                        {social.title}
+                        <motion.div variants={arrow}><ArrowUpRightIcon className="h-4 w-4" /></motion.div>
+                      </a>
+                    </motion.li>
+                  ))
+                }
               </ul>
             </div>
           </div>

@@ -8,7 +8,7 @@ const TextSlider = () => {
 
   return (
     <motion.div
-      className="relative flex overflow-hidden whitespace-nowrap w-full mb-8 gap-5"
+      className="relative flex overflow-hidden whitespace-nowrap w-full pb-3 mb-8 gap-5"
       initial={{
         x: '10%',
         opacity: 0

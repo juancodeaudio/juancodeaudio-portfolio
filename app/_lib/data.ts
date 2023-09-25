@@ -109,3 +109,26 @@ export const projectsData = [
     foreground: "light"
   }
 ] as const;
+
+export const socialMedia = [
+  {
+    id: 1,
+    title: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/juancodeaudio/'
+  },
+  {
+    id: 1,
+    title: 'Github',
+    href: 'https://github.com/juancodeaudio'
+  },
+  {
+    id: 1,
+    title: 'Instagram',
+    href: 'https://www.instagram.com/juancodeaudio/'
+  },
+  {
+    id: 1,
+    title: 'X',
+    href: 'https://www.linkedin.com/in/juancodeaudio/'
+  }
+] as const
