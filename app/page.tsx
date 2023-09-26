@@ -4,29 +4,10 @@ import Landing from '@/components/home/Landing'
 import DescriptionLanding from '@/components/home/DescriptionLanding'
 import ProjectsGallery from '@/components/home/ProjectsGallery'
 import Button from '@/common/Button'
-import Lenis from '@studio-freight/lenis'
 import WidthLayout from '@/common/WidthLayout'
 import Link from 'next/link'
 
 export default function Home() {
-
-  // useEffect(() => {
-  //  const lenis = new Lenis()
-
-  //  function raf(time: number) {
-  //    lenis.raf(time)
-  //    requestAnimationFrame(raf)
-  //  }
-
-  //  requestAnimationFrame(raf)
-
-    //stop lenis 
-//lenis.stop();
-
-//reload lenis animations
-
-//lenis.start();
-//  }, [])
 
 useEffect( () => {
   (
