@@ -29,7 +29,7 @@ const Footer = () => {
   const y = useTransform(scrollYProgress, [0, 1], [-600, 0]);
 
   return (
-    <motion.footer ref={container} className="w-full h-screen bg-black py-8 md:py-12 text-light text-sm overflow-hidden px-5 md:px-10">
+    <motion.footer ref={container} className="w-full h-[100dvh] bg-black py-8 md:py-12 text-light text-sm overflow-hidden px-5 md:px-10">
       <motion.div
         style={{y}}
         className="h-full"

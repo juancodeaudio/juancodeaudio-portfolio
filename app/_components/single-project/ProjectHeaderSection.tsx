@@ -25,7 +25,7 @@ const ProjectHeaderSection: React.FC<Props> = ({ background, foreground, name, t
   return (
     <motion.section
       animate={{
-        height: ['100vh', '100vh', '70vh'],
+        height: ['100dvh', '100dvh', '70dvh'],
         originY: 0,
         transition: {
           duration: 1.8

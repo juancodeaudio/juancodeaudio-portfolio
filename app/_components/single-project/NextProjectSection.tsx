@@ -21,7 +21,7 @@ const NextProjectSection: React.FC<Props> = ({nextProject}) => {
   const y = useTransform(scrollYProgress, [0, 1], [-500, 0]);
 
   return (
-    <motion.section ref={container} className={`w-full h-2/3 ${projectsData.at(nextProject)?.background} p-10 overflow-hidden`}>
+    <motion.section ref={container} className={`w-full h-[66dvh] ${projectsData.at(nextProject)?.background} p-10 overflow-hidden`}>
       <motion.div
         style={{y}}
         className="h-full flex flex-col gap-20"

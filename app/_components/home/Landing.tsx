@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const Landing = () => {
   return (
-    <section className="h-screen">
+    <section className="h-[100dvh]">
       <WidthLayout>
         <LandingBackground />
         <div className="h-full pt-40 lg:pt-24 flex flex-col justify-evenly lg:justify-center gap-0">

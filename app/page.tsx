@@ -28,6 +28,15 @@ export default function Home() {
 //lenis.start();
 //  }, [])
 
+useEffect( () => {
+  (
+    async () => {
+        const LocomotiveScroll = (await import('locomotive-scroll')).default
+        const locomotiveScroll = new LocomotiveScroll();
+    }
+  )()
+}, [])
+
   return (
     <main>
       <WidthLayout>  
