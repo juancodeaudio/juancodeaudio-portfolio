@@ -62,7 +62,7 @@ export default function ParallaxText({ children, baseVelocity = 100 }: ParallaxP
    */
   return (
     <motion.div
-      className="overflow-hidden m-0 whitespace-nowrap flex flex-nowrap mb-8 pb-4"
+      className="overflow-hidden m-0 whitespace-nowrap flex flex-nowrap mb-8 pb-4 uppercase"
       initial={{
         x: '10%',
         opacity: 0
@@ -78,6 +78,8 @@ export default function ParallaxText({ children, baseVelocity = 100 }: ParallaxP
       }}
     >
       <motion.div className="flex whitespace-nowrap flex-nowrap" style={{ x }}>
+        <h2 className="mr-[30px]">{children} </h2>
+        <h2 className="mr-[30px]">{children} </h2>
         <h2 className="mr-[30px]">{children} </h2>
         <h2 className="mr-[30px]">{children} </h2>
       </motion.div>

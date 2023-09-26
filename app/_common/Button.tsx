@@ -63,16 +63,34 @@ const Button: React.FC<IButtonProps> = ({ children, buttonColor, variant, disabl
     variantA: { scale: 1, x: -50, opacity: 0 },
     animate: { x: 0, opacity: 1 },
     variantB: { scale: 1.05 },
+    variantC: {
+      scale: 0.95,
+      transition: {
+        duration: 0.3
+      }
+    }
   }
 
   const childBG = {
-    variantA: { bottom: 70},
-    variantB: { top: -70},
+    variantA: { bottom: 70 },
+    variantB: { top: -70 },
+    variantC: {
+      top: -70,
+      transition: {
+        duration: 0.3
+      }
+    }
   }
 
   const childTX = {
     variantA: { scale: 1},
     variantB: { scale: 1.1},
+    variantC: {
+      scale: 0.95,
+      transition: {
+        duration: 0.3
+      }
+    }
   }
 
   return (
@@ -85,6 +103,7 @@ const Button: React.FC<IButtonProps> = ({ children, buttonColor, variant, disabl
         initial="variantA"
         whileInView="animate"
         whileHover="variantB"
+        whileTap="variantC"
         transition={{
           ease: 'easeOut',
           delay: 0.4,

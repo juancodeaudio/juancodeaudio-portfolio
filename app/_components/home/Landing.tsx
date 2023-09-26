@@ -18,7 +18,7 @@ const Landing = () => {
           </div>
           {/* lg:w-7/12 */}
           {/* <TextSlider /> */}
-          <ParallaxText baseVelocity={-2}>Fullstack Web Developer - Audio Developer - Designer -</ParallaxText>
+          <ParallaxText baseVelocity={-1}>Fullstack Web Developer - Audio Developer - Designer -</ParallaxText>
           <div className='w-full px-10 flex justify-center lg:justify-start'>
             <Link href='/contact'>
               <Button buttonColor="light" hoverColor="bg-primary">CONTACT ME</Button>
