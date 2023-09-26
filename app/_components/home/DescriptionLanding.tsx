@@ -26,7 +26,7 @@ const DescriptionLanding = () => {
           The combination of my passion for technology, arts and design creates a unique profile in the software development field. When I’m not creating beautiful software experiences, you can find me learning new things like languages, video or audio production or even cooking.
         </Paragraph>
         <Paragraph className="text-right">
-          Look forward to hearing from you. You can always <Link href="/contact">CONTACT ME</Link> any time.
+          Look forward to hearing from you. You can always <span className="relative inline-block"><Link href="/contact" className="after:-bottom-1 after:block after:h-[1px] after:left-0 after:absolute after:bg-foreground/40 after:w-0 hover:after:w-full after:transition-all after:transform after:ease-in-out after:duration-700 text-foreground/40">CONTACT ME</Link></span> any time.
         </Paragraph>
       </motion.div>
       <Title3 

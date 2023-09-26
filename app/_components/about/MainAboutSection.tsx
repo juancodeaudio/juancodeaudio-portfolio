@@ -13,7 +13,7 @@ const MainAboutSection = () => {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "10%"])
 
   return (
-    <section className='pt-40 md:pt-64 pb-24 flex flex-col justify-center gap-10 px-14 md:px-0 lg:pr-10 mb-32 md:mb-0'>
+    <section className='pt-40 md:pt-64 pb-24 flex flex-col justify-center gap-10 px-8 md:px-0 lg:pr-10 mb-32 md:mb-0'>
       <Title className="text-center mb-8 md:mb-32" text="About  Me" />
       <div ref={ref} className="flex flex-col md:flex-row w-full gap-0 md:gap-16 mb-32">
         <motion.div

@@ -3,6 +3,7 @@ import LandingBackground from '@/components/home/LandingBackground';
 import Button from "@/common/Button"
 import WidthLayout from "@/app/_common/WidthLayout"
 import TextSlider from "@/components/home/TextSlider"
+import ParallaxText from './ParallaxText';
 import Link from 'next/link';
 
 const Landing = () => {
@@ -16,12 +17,13 @@ const Landing = () => {
             <Title className='w-full overflow-visible text-foreground opacity-50 text-right' text='Alvarado' />
           </div>
           {/* lg:w-7/12 */}
-          <TextSlider />
+          {/* <TextSlider /> */}
+          <ParallaxText baseVelocity={-2}>Fullstack Web Developer - Audio Developer - Designer -</ParallaxText>
           <div className='w-full px-10 flex justify-center lg:justify-start'>
             <Link href='/contact'>
               <Button buttonColor="light" hoverColor="bg-primary">CONTACT ME</Button>
             </Link>
-          </div>
+          P</div>
         </div>
       </WidthLayout>
     </section>
