@@ -66,7 +66,7 @@ const Button: React.FC<IButtonProps> = ({ children, buttonColor, variant, disabl
     variantC: {
       scale: 0.95,
       transition: {
-        duration: 0.3
+        duration: 0.1
       }
     }
   }
@@ -77,7 +77,7 @@ const Button: React.FC<IButtonProps> = ({ children, buttonColor, variant, disabl
     variantC: {
       top: -70,
       transition: {
-        duration: 0.3
+        duration: 0.05
       }
     }
   }
@@ -88,7 +88,7 @@ const Button: React.FC<IButtonProps> = ({ children, buttonColor, variant, disabl
     variantC: {
       scale: 0.95,
       transition: {
-        duration: 0.3
+        duration: 0.1
       }
     }
   }
