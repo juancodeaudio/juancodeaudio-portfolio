@@ -117,17 +117,17 @@ export const socialMedia = [
     href: 'https://www.linkedin.com/in/juancodeaudio/'
   },
   {
-    id: 1,
+    id: 2,
     title: 'Github',
     href: 'https://github.com/juancodeaudio'
   },
   {
-    id: 1,
+    id: 3,
     title: 'Instagram',
     href: 'https://www.instagram.com/juancodeaudio/'
   },
   {
-    id: 1,
+    id: 4,
     title: 'X',
     href: 'https://www.linkedin.com/in/juancodeaudio/'
   }

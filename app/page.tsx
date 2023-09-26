@@ -24,7 +24,7 @@ useEffect( () => {
         <Landing />
         <DescriptionLanding />
         <ProjectsGallery imageSize='lg' />
-        <div className='bg-background py-16 md:py-24 flex justify-center'>
+        <div className='w-screen bg-background py-16 md:py-24 flex justify-center'>
           <Link href='/projects' >
             <Button buttonColor="light" variant="bordered" hoverColor='bg-primary'>More projects</Button>
           </Link>
