@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const path = usePathname();
 
-  const { scrollY } = useScroll();
+  const { scrollY, scrollYProgress } = useScroll();
   const [hidden, setHidden] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const pathname = usePathname();
@@ -28,9 +28,9 @@ const Navbar = () => {
   }, [pathname])
 
   function update() {
-    if (scrollY?.getVelocity() < 0 || scrollY?.get() < 100) {
+    if ((scrollY?.getVelocity() < 0 || scrollY?.get() < 100) && scrollYProgress?.get() < 0.93 ) {
       setHidden(false);
-    } else if (scrollY?.get() < 2 || scrollY?.getVelocity() > 0) {
+    } else if (scrollY?.getVelocity() > 0) {
       setHidden(true);
     }
   }
