@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const Landing = () => {
   return (
-    <section className="h-[100dvh]">
+    <section className="h-[100svh]">
       <WidthLayout>
         {/* <LandingBackground /> */}
         <div className="h-full pt-40 lg:pt-24 flex flex-col justify-evenly lg:justify-center gap-0">
@@ -21,7 +21,7 @@ const Landing = () => {
             <Link href='/contact'>
               <Button buttonColor="light" hoverColor="bg-primary">CONTACT ME</Button>
             </Link>
-          P</div>
+          </div>
         </div>
       </WidthLayout>
     </section>

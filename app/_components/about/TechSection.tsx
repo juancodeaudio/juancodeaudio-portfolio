@@ -1,8 +1,13 @@
-
+import { StreamlinedExperience } from "./streamlined-experience"
+import { Features } from "./features"
 
 const TechSection = () => {
+
   return (
-    <div className='h-screen bg-red-200 pt-24 flex justify-center'>TECHNOLOGIES SECTION</div>
+    <section className="relative z-10 w-full overflow-x-clip">
+      <Features />
+      <StreamlinedExperience />
+    </section>
   )
 }
 

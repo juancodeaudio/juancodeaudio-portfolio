@@ -24,11 +24,13 @@ const arrowVariants = {
 const ProjectsLanding = () => {
   return (
     <section className="px-10">
-      <Title2 className="text-left mb-20" text="I combine art and technology to build the next generation of projects" />
-      <div className="absolute top-[340px] right-1/4 h-24 w-10 flex justify-center overflow-hidden">
-        <motion.div variants={arrowVariants} initial="initial" animate="animate">
-          <ArrowDownIcon className="h-12 w-12" />
-        </motion.div>
+      <div className="relative">
+        <Title2 className="text-left mb-20 w-5/6" text="I combine art and technology to build the next generation of projects" />
+        <div className="absolute bottom-0 right-[5vw] h-24 w-10 flex justify-center overflow-hidden">
+          <motion.div variants={arrowVariants} initial="initial" animate="animate">
+            <ArrowDownIcon className="h-10 sm:h-12 w-10 sm:w-12" />
+          </motion.div>
+        </div>
       </div>
       <div className="flex flex-col md:flex-row gap-6 md:gap-16 mb-28 items-center">
         <a href="/CV.pdf" download="Juan Pablo Alvarado - CV">
