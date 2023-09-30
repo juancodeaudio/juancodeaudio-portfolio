@@ -2,6 +2,10 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 import { Title2, Paragraph } from "@/common/TextStyles";
+import Cards from "./Cards";
+import { CPlusPlusIcon, NextJSIcon, TSIcon, ProToolsIcon, AudacityIcon, AfterEffectsIcon, IllustratorIcon, PhotoshopIcon, AffinityIcon, AffinityPIcon } from "@/common/icons";
+import { FaSquareJs, FaPython, FaSwift, FaSquareGithub, FaReact, FaSass, FaNode, FaFigma } from "react-icons/fa6";
+import { HiFilm, HiMusicalNote } from "react-icons/hi2";
 
 export const Features = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
@@ -14,8 +18,8 @@ export const Features = () => {
   const x = useTransform(scrollYProgress, [0.3, 1], ["50%", "0%"]);
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.85, 0.9],
-    [0.4, 0.4, 1]
+    [0, 0.2],
+    [0.4, 1]
   );
 
   const text1Opacity = useTransform(
@@ -28,6 +32,11 @@ export const Features = () => {
     [0.1, 0.2, 0.3],
     ["30px", "0px", "-30px"]
   );
+  const gap1 = useTransform(
+    scrollYProgress,
+    [0.05, 0.3],
+    ["20px", "40px"]
+  );
 
   const text2Opacity = useTransform(
     scrollYProgress,
@@ -38,6 +47,11 @@ export const Features = () => {
     scrollYProgress,
     [0.3, 0.4, 0.5],
     ["30px", "0px", "-30px"]
+  );
+  const gap2 = useTransform(
+    scrollYProgress,
+    [0.25, 0.5],
+    ["20px", "40px"]
   );
 
   const text3Opacity = useTransform(
@@ -50,16 +64,26 @@ export const Features = () => {
     [0.5, 0.6, 0.7],
     ["30px", "0px", "-30px"]
   );
+  const gap3 = useTransform(
+    scrollYProgress,
+    [0.45, 0.7],
+    ["20px", "40px"]
+  );
 
   const text4Opacity = useTransform(
     scrollYProgress,
-    [0.7, 0.8, 0.9],
-    [0, 1, 0]
+    [0.7, 0.8, 1],
+    [0, 1, 1]
   );
   const text4Y = useTransform(
     scrollYProgress,
     [0.7, 0.8, 0.9],
     ["30px", "0px", "-30px"]
+  );
+  const gap4 = useTransform(
+    scrollYProgress,
+    [0.65, 0.9],
+    ["20px", "40px"]
   );
 
   return (
@@ -69,14 +93,19 @@ export const Features = () => {
     >
       <div className="sticky top-[16.7vh] h-[66.8vh] px-16">
         <motion.div style={{ x, scale }} className="relative h-full">
-          <motion.div style={{ opacity }} className="h-[80vh] w-[80vw] bg-black rounded-xl">
-            <motion.div style={{ opacity: text1Opacity }} className="absolute inset-0 h-[80vh] w-[80vw] bg-yellow-300 rounded-xl">
+          <motion.div style={{ opacity }} className="h-[80vh] w-[80vw] bg-transparent rounded-xl">
+          <Cards />
+            <motion.div style={{ opacity: text1Opacity }} className="absolute inset-0 h-[80vh] w-[80vw] rounded-xl overflow-hidden">
+              <Cards />
             </motion.div>
-            <motion.div style={{ opacity: text2Opacity }} className="absolute inset-0 h-[80vh] w-[80vw] bg-red-300 rounded-xl">
+            <motion.div style={{ opacity: text2Opacity }} className="absolute inset-0 h-[80vh] w-[80vw] rounded-xl overflow-hidden">
+              <Cards />
             </motion.div>
-            <motion.div style={{ opacity: text3Opacity }} className="absolute inset-0 h-[80vh] w-[80vw] bg-green-300 rounded-xl">
+            <motion.div style={{ opacity: text3Opacity }} className="absolute inset-0 h-[80vh] w-[80vw] rounded-xl overflow-hidden">
+              <Cards />
             </motion.div>
-            <motion.div style={{ opacity: text4Opacity }} className="absolute inset-0 h-[80vh] w-[80vw] bg-blue-300 rounded-xl">
+            <motion.div style={{ opacity: text4Opacity }} className="absolute inset-0 h-[80vh] w-[80vw] rounded-xl overflow-hidden">
+              <Cards />
             </motion.div>
           </motion.div>
         </motion.div>
@@ -87,8 +116,25 @@ export const Features = () => {
           }}
           className="translate-y-centered-offset absolute top-1/2 left-0 w-2/3"
         >
-          <Title2 className="uppercase" text="WEB" />
-          <Paragraph>We detect your environment so you don´t need to fiddle with configuration files.</Paragraph> 
+          <Title2 className="uppercase" text="Code" />
+          <Paragraph>I have experience with multiple programming languages like Javascript, Python, C++ or Swift that can be used in different fields such as audio software, artificial intelligence, mobile apps or WEB development</Paragraph> 
+          <motion.div className="flex mt-5" style={{gap: gap1}}>
+            <div className="h-10 w-10">
+              <CPlusPlusIcon />
+            </div>
+            <div className="h-10 w-10">
+              <FaSquareJs className="h-full w-full fill-foreground/60" />
+            </div>
+            <div className="h-10 w-10">
+              <FaPython className="h-full w-full fill-foreground/60" />
+            </div>
+            <div className="h-10 w-10">
+              <FaSwift className="h-full w-full fill-foreground/60" />
+            </div>
+            <div className="h-10 w-10">
+              <FaSquareGithub className="h-full w-full fill-foreground/60" />
+            </div>
+          </motion.div>
         </motion.div>
         <motion.div
           style={{
@@ -97,8 +143,25 @@ export const Features = () => {
           }}
           className="translate-y-centered-offset absolute top-1/2 left-0 w-2/3"
         >
-          <Title2 className="uppercase" text="Code" />
-          <Paragraph>Access and complete any action in seconds with the command palette.</Paragraph> 
+          <Title2 className="uppercase" text="WEB" />
+          <Paragraph>Access and complete any action in seconds with the command palette.</Paragraph>
+          <motion.div className="flex mt-5" style={{gap: gap2}}>
+            <div className="h-10 w-10">
+              <TSIcon />
+            </div>
+            <div className="h-10 w-10">
+              <FaReact className="h-full w-full fill-foreground/60" />
+            </div>
+            <div className="h-10 w-10">
+              <FaNode className="h-full w-full fill-foreground/60" />
+            </div>
+            <div className="h-10 w-10">
+              <NextJSIcon />
+            </div>
+            <div className="h-10 w-10">
+              <FaSass className="h-full w-full fill-foreground/60" />
+            </div>
+          </motion.div>
         </motion.div>
         <motion.div
           style={{
@@ -109,6 +172,23 @@ export const Features = () => {
         >
           <Title2 className="uppercase" text="Media" />
           <Paragraph>We´ve bundled useful tools to help you get your work done faster andmore efficiently.</Paragraph>
+          <motion.div className="flex mt-5" style={{gap: gap3}}>
+            <div className="h-10 w-10">
+              <ProToolsIcon />
+            </div>
+            <div className="h-10 w-10">
+              <AudacityIcon />
+            </div>
+            <div className="h-10 w-10">
+              <HiFilm className="h-full w-full fill-foreground/60" />
+            </div>
+            <div className="h-10 w-10">
+              <HiMusicalNote className="h-full w-full fill-foreground/60" />
+            </div>
+            <div className="h-10 w-10">
+              <AfterEffectsIcon />
+            </div>
+          </motion.div>
         </motion.div>
         <motion.div
           style={{
@@ -119,6 +199,23 @@ export const Features = () => {
         >
           <Title2 className="uppercase" text="Design" />
           <Paragraph>We´ve bundled useful tools to help you get your work done faster andmore efficiently.</Paragraph>
+          <motion.div className="flex mt-5" style={{gap: gap4}}>
+            <div className="h-10 w-10">
+              <FaFigma className="h-full w-full fill-foreground/60" />
+            </div>
+            <div className="h-10 w-10">
+              <AffinityIcon />
+            </div>
+            <div className="h-10 w-10">
+              <AffinityPIcon />
+            </div>
+            <div className="h-10 w-10">
+              <IllustratorIcon />
+            </div>
+            <div className="h-10 w-10">
+              <PhotoshopIcon />
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

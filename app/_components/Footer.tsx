@@ -47,13 +47,13 @@ const Footer = () => {
             <div className="flex flex-col gap-12">
               <a href="mailto:hello@juancodeaudio.com" className="relative group flex flex-col">
                 <div className="relative m-auto xl:m-0 xl:mr-auto">
-                  <Title2 className="underline uppercase text-center xl:text-left after:bottom-2 after:block after:h-1 lg:after:h-2 after:left-0 after:absolute after:bg-foreground after:w-0 group-hover:after:w-full after:transition-all after:transform after:ease-in-out after:duration-700" text="hello@"/>
+                  <Title2 className="underline uppercase text-center xl:text-left relative after:block after:absolute after:h-1 lg:after:h-2 after:left-0 after:right-0 after:bottom-2 after:bg-foreground after:scale-x-0 after:transition-transform after:ease-in-out after:duration-700 after:origin-bottom-right group-hover:after:origin-bottom-left group-hover:after:scale-x-100" text="hello@"/>
                 </div>
-                <div className="flex flex-col md:flex-row relative">
+                <div className="flex flex-col md:flex-row relative after:hidden md:after:block after:absolute after:h-1 lg:after:h-2 after:left-0 after:right-0 after:bottom-2 after:bg-foreground after:scale-x-0 after:transition-transform after:ease-in-out after:duration-700 after:origin-bottom-right group-hover:after:origin-bottom-left group-hover:after:scale-x-100">
                   <div className="relative w-auto m-auto xl:m-0 xl:mr-auto">
-                    <Title2 className="underline uppercase text-center lg:text-left after:bottom-2 after:block after:h-1 lg:after:h-2 after:left-0 after:absolute after:bg-foreground after:w-0 group-hover:after:w-full after:transition-all after:transform after:ease-in-out after:duration-700" text="juancode"/>
+                    <Title2 className="underline uppercase text-center lg:text-left relative after:block md:after:hidden after:absolute after:h-1 lg:after:h-2 after:left-0 after:right-0 after:bottom-2 after:bg-foreground after:scale-x-0 after:transition-transform after:ease-in-out after:duration-700 after:origin-bottom-right group-hover:after:origin-bottom-left group-hover:after:scale-x-100" text="juancode"/>
                   </div>
-                  <Title2 className="underline uppercase text-center lg:text-left after:bottom-2 after:block after:h-1 lg:after:h-2 after:left-0 after:absolute after:bg-foreground after:w-0 group-hover:after:w-full after:transition-all after:transform after:ease-in-out after:duration-700" text="audio.com"/>
+                  <Title2 className="underline uppercase text-center lg:text-left relative after:block md:after:hidden after:absolute after:h-1 lg:after:h-2 after:left-0 after:right-0 after:bottom-2 after:bg-foreground after:scale-x-0 after:transition-transform after:ease-in-out after:duration-700 after:origin-bottom-right group-hover:after:origin-bottom-left group-hover:after:scale-x-100" text="audio.com"/>
                 </div>
               </a>
             </div>
@@ -79,7 +79,7 @@ const Footer = () => {
                       <a
                         href={social.href}
                         target="_blank"
-                        className="flex items-center gap-1 after:-bottom-2 after:block after:h-[1px] after:left-0 after:absolute after:bg-foreground after:w-0 hover:after:w-full after:transition-all after:transform after:ease-in-out after:duration-700"
+                        className="flex items-center gap-1 relative after:block after:absolute after:h-[1px] after:left-0 after:right-0 after:-bottom-2 after:bg-foreground after:scale-x-0 after:transition-transform after:ease-in-out after:duration-700 after:origin-bottom-right hover:after:origin-bottom-left hover:after:scale-x-100"
                       >
                         {social.title}
                         <motion.div variants={arrow}><ArrowUpRightIcon className="h-4 w-4" /></motion.div>
