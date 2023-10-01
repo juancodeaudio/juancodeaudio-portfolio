@@ -6,7 +6,8 @@ const TechSection = () => {
   return (
     <section className="relative z-10 w-full overflow-x-clip">
       <Features />
-      <StreamlinedExperience />
+      <div className="h h-72 w-full" />
+      {/* <StreamlinedExperience /> */}
     </section>
   )
 }

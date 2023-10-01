@@ -35,13 +35,15 @@ const MainAboutSection = () => {
             once: true 
           }}
         >
-          <motion.div className="h-[120vh] w-full pb-10" style={{y:y}}>
+          <motion.div className="relative h-[120vh] w-full pb-10" style={{y:y}}>
             <Image 
-              className='object-cover object-center'
+              className='object-cover object-center grayscale-[30%] brightness-[85%]'
               fill
               src="/images/about-photo.jpg"
               alt='picture of Juan Pablo Alvarado'
             />
+            <div className="h-full w-full absolute bg-gradient-to-l from-background to-50%"/>
+
           </motion.div>
         </motion.div>
         <motion.div

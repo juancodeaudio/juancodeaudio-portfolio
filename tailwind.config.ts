@@ -32,7 +32,9 @@ const config: Config = {
         'background': '#1b1b1b',
         'alt-background': '#1b1b1b',
         'foreground': '#f5f5f5',
-        'primary': '#0891b2',
+        // 'primary': '#0891b2',
+        'primary': '#5786F5',
+        
         'danger': '#be123c',
         'error': '#be123c'
       },
@@ -40,7 +42,8 @@ const config: Config = {
         'background': '#1b1b1b',
         'alt-background': '#1b1b1b',
         'foreground': '#f5f5f5',
-        'primary': '#0891b2',
+        // 'primary': '#0891b2',
+        'primary': '#5786F5',
         'danger': '#be123c',
         'error': '#be123c'
       }
