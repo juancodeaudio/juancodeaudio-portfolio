@@ -38,10 +38,10 @@ const ProjectsLanding = () => {
         </a>
         <div className="flex gap-6">
           <a href="https://www.linkedin.com/in/juancodeaudio/" target="_blank">
-            <Button buttonColor="light" variant="flat" hoverColor="bg-foreground" size="sm"><FaLinkedin className="h-6 w-6 inline" /></Button>
+            <Button aria-label="LinkedIn" buttonColor="light" variant="flat" hoverColor="bg-foreground" size="sm"><FaLinkedin className="h-6 w-6 inline" /></Button>
           </a>
           <a href="https://github.com/juancodeaudio" target="_blank">
-            <Button buttonColor="light" variant="flat" hoverColor="bg-foreground" size="sm"><FaGithub className="h-6 w-6 inline" /></Button>
+            <Button aria-label="Github" buttonColor="light" variant="flat" hoverColor="bg-foreground" size="sm"><FaGithub className="h-6 w-6 inline" /></Button>
           </a>
         </div>
       </div>

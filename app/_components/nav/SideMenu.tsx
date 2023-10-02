@@ -4,7 +4,6 @@ import { usePathname } from 'next/navigation';
 import { links } from "@/lib/data";
 import Link from 'next/link';
 import { ArrowUpRightIcon } from '@/common/icons';
-import { number } from 'zod';
 
 
 const menuSlide = {

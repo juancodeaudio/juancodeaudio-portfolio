@@ -1,7 +1,8 @@
 'use client'
 import Image from 'next/image';
+import { Suspense } from 'react';
 import { useTransform, useScroll, motion } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import { twJoin } from 'tailwind-merge';
 import Link from 'next/link';
 import { projectsData as projects } from '@/lib/data';
@@ -69,16 +70,26 @@ const Column: React.FC<columnProps> = ({columnProjects, imageSize, y=0, classNam
             variants={imageVariants}
           >
             <Link href={`/projects/${project.projectUrl}`}>
-              <video
-                src={project.videoSrc ? `/images/projects/${project.projectUrl}/${project.videoSrc}` : undefined}
-                poster={`/images/projects/${project.projectUrl}/${project.imageSrc}`}
-                className='w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer bg-background'
-                loop
-                muted
-                autoPlay
-                playsInline
-                controls={false}
-              />
+              {
+                project.videoSrc
+                ? 
+                <Suspense fallback={<div>Loading...</div>}>
+                  <video
+                    src={project.videoSrc ? `/images/projects/${project.projectUrl}/${project.videoSrc}` : undefined}
+                    // poster={`/images/projects/${project.projectUrl}/${project.imageSrc}`}
+                    className='w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer bg-background'
+                    loop
+                    muted
+                    autoPlay
+                    playsInline
+                    controls={false}
+                  />
+                </Suspense>
+                : 
+                <div className='h-full w-full'>
+                  <Image alt='' src={`/images/projects/${project.projectUrl}/${project.imageSrc}`} height={300} width={500} className='w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer bg-background' />
+                </div> 
+              }
             </Link>
           </motion.div>
           )

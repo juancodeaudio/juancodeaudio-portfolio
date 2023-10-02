@@ -2,7 +2,6 @@ import { Title } from '@/common/TextStyles';
 import LandingBackground from '@/components/home/LandingBackground';
 import Button from "@/common/Button"
 import WidthLayout from "@/app/_common/WidthLayout"
-import TextSlider from "@/components/home/TextSlider"
 import ParallaxText from './ParallaxText';
 import Link from 'next/link';
 

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import WidthLayout from '@/common/WidthLayout'
 import Logo from '@/common/Logo'
-import ThemeButton from '@/components/nav/ThemeButton'
+// import ThemeButton from '@/components/nav/ThemeButton'
 import MagneticComponent from '@/common/MagneticComponent'
 import Menu from '@/components/nav/Menu'
 import { links } from "@/lib/data";
