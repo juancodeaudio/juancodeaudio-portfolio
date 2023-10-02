@@ -14,7 +14,7 @@ const ServicesSection = () => {
   const y2 = useTransform(scrollYProgress, [0, 1], [200, -200])
 
   return (
-    <section ref={ref} className='lg:h-screen pb-24 flex flex-col lg:flex-row justify-center gap-56 lg:gap-10'>
+    <section ref={ref} className='lg:h-[60vh] pb-24 flex flex-col lg:flex-row justify-center gap-56 lg:gap-10'>
       <motion.div
         className="h-full w-ful lg:w-1/2 text-center px-5 lg:px-32 flex flex-col gap-6 justify-center"
         style={{y: y}}

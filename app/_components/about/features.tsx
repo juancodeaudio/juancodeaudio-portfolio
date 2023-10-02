@@ -15,7 +15,7 @@ export const Features = () => {
   });
 
   const scale = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 0.8, 0.8, 1.4]);
-  const x = useTransform(scrollYProgress, [0, 1], ["50%", "0%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["5%", "-20%"]);
   const opacity = useTransform(
     scrollYProgress,
     [0, 0.2],
@@ -89,23 +89,26 @@ export const Features = () => {
   return (
     <section
       ref={targetRef}
-      className="flex h-[700vh] flex-col items-center justify-start"
+      className="flex h-[700vh] flex-col items-center justify-start relative"
     >
-      <div className="sticky top-[16.7vh] h-[66.8vh] px-16">
-        <motion.div style={{ x, scale }} className="relative h-full">
-          <motion.div style={{ opacity }} className="h-[80vh] w-[80vw] rounded-xl">
-          <Cards progress={scrollYProgress} sphereColor="#f5f5f5" />
-            <motion.div style={{ opacity: text1Opacity }} className="absolute inset-0 h-[80vh] w-[80vw] rounded-xl overflow-hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#7ba3ff53] via-[#5786f553] via-5% to-transparent to-40%">
-            <Cards progress={scrollYProgress} sphereColor="#5786F5" />
+      <div className="sticky top-[16.7vh] h-[50vh] lg:h-[66.8vh] w-screen px-16">
+        <motion.div style={{ x, scale }} className="relative h-full w-[150vw]">
+          <motion.div style={{ opacity }} className="h-[80vh] w-full">
+            <motion.div className="absolute inset-0 h-[80vh] w-full">
+              <Cards progress={scrollYProgress} sphereColor="#f5f5f5" />
             </motion.div>
-            <motion.div style={{ opacity: text2Opacity }} className="absolute inset-0 h-[80vh] w-[80vw] rounded-xl overflow-hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#7bffcc53] via-[#57f5d853] via-5% to-transparent to-40%">
-            <Cards progress={scrollYProgress} sphereColor="#57f5d8" />
+          {/* <Cards progress={scrollYProgress} sphereColor="#f5f5f5" /> */}
+            <motion.div style={{ opacity: text1Opacity }} className="absolute inset-0 h-[80vh] w-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#7ba3ff53] via-[#5786f553] via-5% to-transparent to-40%">
+              <Cards progress={scrollYProgress} sphereColor="#5786F5" />
             </motion.div>
-            <motion.div style={{ opacity: text3Opacity }} className="absolute inset-0 h-[80vh] w-[80vw] rounded-xl overflow-hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#ffc47b53] via-[#f5ab5753] via-5% to-transparent to-40%">
-            <Cards progress={scrollYProgress} sphereColor="#f5ab57" />
+            <motion.div style={{ opacity: text2Opacity }} className="absolute inset-0 h-[80vh] w-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#7bffcc53] via-[#57f5d853] via-5% to-transparent to-40%">
+              <Cards progress={scrollYProgress} sphereColor="#57f5d8" />
             </motion.div>
-            <motion.div style={{ opacity: text4Opacity }} className="absolute inset-0 h-[80vh] w-[80vw] rounded-xl overflow-hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#de7bff53] via-[#e057f553] via-5% to-transparent to-40%">
-            <Cards progress={scrollYProgress} sphereColor="#e057f5" />
+            <motion.div style={{ opacity: text3Opacity }} className="absolute inset-0 h-[80vh] w-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#ffc47b53] via-[#f5ab5753] via-5% to-transparent to-40%">
+              <Cards progress={scrollYProgress} sphereColor="#f5ab57" />
+            </motion.div>
+            <motion.div style={{ opacity: text4Opacity }} className="absolute inset-0 h-[80vh] w-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#de7bff53] via-[#e057f553] via-5% to-transparent to-40%">
+              <Cards progress={scrollYProgress} sphereColor="#e057f5" />
             </motion.div>
           </motion.div>
         </motion.div>

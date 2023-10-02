@@ -42,7 +42,7 @@ const MainAboutSection = () => {
               src="/images/about-photo.jpg"
               alt='picture of Juan Pablo Alvarado'
             />
-            <div className="h-full w-full absolute bg-gradient-to-l from-background to-50%"/>
+            <div className="hidden md:block h-full w-full absolute bg-gradient-to-l from-background from-10% to-50%"/>
 
           </motion.div>
         </motion.div>
