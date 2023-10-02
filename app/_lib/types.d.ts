@@ -7,6 +7,7 @@ export interface IButtonProps
     disabled?: boolean;
     hoverColor: string;
     size?: "sm" |  "lg";
+    ariaLabel?: string
 }
 
 export type iconProps = {

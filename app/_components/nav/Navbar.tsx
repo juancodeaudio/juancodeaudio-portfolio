@@ -58,7 +58,7 @@ const Navbar = () => {
           <nav className='flex group items-center justify-center gap-2'>
             <Logo />
             <MagneticComponent>
-              <Link href="/" className='hidden sm:flex relative overflow-hidden whitespace-nowrap ml-[5px] transition-all ease-in-out w-[150px] group-hover:w-[160px] duration-500'>
+              <Link aria-label='Home' href="/" className='hidden sm:flex relative overflow-hidden whitespace-nowrap ml-[5px] transition-all ease-in-out w-[150px] group-hover:w-[160px] duration-500'>
                 <p className='text-base relative transition-transform duration-500 ease-in-out pl-1 group-hover:translate-x-[-150px]'>by juancodeaudio</p>
                 <p className='text-base absolute pl-1 left-[150px] transition-transform duration-500 ease-in-out group-hover:translate-x-[-150px]'>Juan Pablo Alvarado</p>
               </Link>

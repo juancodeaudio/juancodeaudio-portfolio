@@ -57,7 +57,7 @@ const button = cva("w-64 h-16 relative overflow-hidden flex justify-center items
   }
 });
 
-const Button: React.FC<IButtonProps> = ({ children, buttonColor, variant, disabled, hoverColor, size }) => {
+const Button: React.FC<IButtonProps> = ({ children, buttonColor, variant, disabled, hoverColor, size, ariaLabel }) => {
   
   const parent = {
     variantA: { scale: 1, x: -50, opacity: 0 },
@@ -110,6 +110,7 @@ const Button: React.FC<IButtonProps> = ({ children, buttonColor, variant, disabl
           duration: 1
         }}
         viewport={{ once: true }}
+        aria-label={ariaLabel}
       >
         <motion.div
           className={`${hoverColor} absolute left-[-15px] w-72 h-48 rounded-full`}
