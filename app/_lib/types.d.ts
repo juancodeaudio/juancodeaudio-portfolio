@@ -37,11 +37,7 @@ export type columnProject = {
 export interface columnProps {
   columnProjects: columnProject[],
   y: MotionValue<number>,
-  imageSize: 'lg' | 'sm',
   className?: string
-}
-export interface galleryProps {
-  imageSize: 'lg' | 'sm'
 }
 
 export interface projectDataTypes {

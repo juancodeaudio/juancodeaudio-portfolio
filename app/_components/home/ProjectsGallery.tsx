@@ -6,7 +6,7 @@ import { useRef } from 'react';
 import { twJoin } from 'tailwind-merge';
 import Link from 'next/link';
 import { projectsData as projects } from '@/lib/data';
-import { columnProps, galleryProps } from '@/lib/types';
+import { columnProps } from '@/lib/types';
 
 const columnProjects = [
   [
@@ -48,11 +48,11 @@ const imageVariants = {
   }
 }
 
-const Column: React.FC<columnProps> = ({columnProjects, imageSize, y=0, className}) => {
+const Column: React.FC<columnProps> = ({columnProjects, y=0, className}) => {
   return (
     <motion.div 
       className={twJoin(
-        'relative h-[100vh] sm:h-[120vh] md:h-[150vh] flex flex-col gap-4 odd:top-[-45%] even:top-[-95%] last:top-[-85%]',
+        'relative h-[100vh] sm:h-[120vh] md:h-[150vh] w-[180vw] sm:w-[160vw] md:w-full lg:w-[150vw] xl:w-full flex flex-col gap-4 odd:top-[-45%] even:top-[-95%] last:top-[-85%]',
         className,
       )}
       style={{ y }}
@@ -66,7 +66,7 @@ const Column: React.FC<columnProps> = ({columnProjects, imageSize, y=0, classNam
           return (
           <motion.div 
             key={project.projectUrl} 
-            className={`h-full w-full relative ${imageSize === 'lg' ? 'rounded-md' : 'rounded-2xl'} overflow-hidden`}
+            className={`h-full w-full relative rounded-md overflow-hidden`}
             variants={imageVariants}
           >
             <Link href={`/projects/${project.projectUrl}`}>
@@ -99,7 +99,7 @@ const Column: React.FC<columnProps> = ({columnProjects, imageSize, y=0, classNam
   )
 }
 
-const ProjectsGallery: React.FC<galleryProps> = ({ imageSize }) => {
+const ProjectsGallery = () => {
 
   const gallery = useRef(null)
   const { scrollYProgress } = useScroll({
@@ -113,23 +113,13 @@ const ProjectsGallery: React.FC<galleryProps> = ({ imageSize }) => {
   
   return (
     <section ref={gallery} className='relative h-[50vh] sm:h-[60vh] md:h-screen flex m-auto overflow-hidden'>
-      <div className={`h-[145vh] sm:h-[165vh] md:h-[190vh] ${imageSize === 'lg' ? 'px-5' : 'px-16'} w-[180vw] sm:w-[160vw] md:w-full lg:w-[150vw] xl:w-full bg-foreground absolute -left-[40vw] sm:-left-[25vw] md:left-0 lg:-left-[25vw] xl:left-0 top-0 bottom-0 flex gap-5 py-16 overflow-y-hidden`}>
-        {
-          imageSize === 'lg' ? (
-            <>
-              <Column imageSize={imageSize} y={y} columnProjects={columnProjects[0]} className='hidden lg:flex' />
-              <Column imageSize={imageSize} y={y2} columnProjects={columnProjects[1]} />
-              <Column imageSize={imageSize} y={y3} columnProjects={columnProjects[2]} />
-            </>
-          ) : (
-            <>
-              {/* <Column imageSize={imageSize} images={[images[0], images[1], images[2]]} y={y}/>
-              <Column imageSize={imageSize} images={[images[3], images[4], images[5]]} y={y2}/>
-              <Column imageSize={imageSize} images={[images[6], images[7], images[8]]} y={y3}/>
-              <Column imageSize={imageSize} images={[images[9], images[10], images[11]]} y={y4}/> */}
-            </>
-          )
-        }
+      <div
+        className={`h-[145vh] sm:h-[165vh] md:h-[190vh] px-5 w-[180vw] sm:w-[160vw] md:w-full lg:w-[150vw] xl:w-full bg-foreground absolute -left-[40vw] sm:-left-[25vw] md:left-0 lg:-left-[25vw] xl:left-0 top-0 bottom-0 flex gap-5 py-16 overflow-y-hidden`}
+      >
+        {/* className={`h-[145vh] sm:h-[165vh] md:h-[190vh] px-5 w-[180vw] sm:w-[160vw] md:w-full lg:w-[150vw] xl:w-full bg-foreground absolute -left-[40vw] sm:-left-[25vw] md:left-0 lg:-left-[25vw] xl:left-0 top-0 bottom-0 flex gap-5 py-16 overflow-y-hidden`} */}
+        <Column y={y} columnProjects={columnProjects[0]} className='hidden lg:flex' />
+        <Column y={y2} columnProjects={columnProjects[1]} />
+        <Column y={y3} columnProjects={columnProjects[2]} />
       </div>
     </section>
   )

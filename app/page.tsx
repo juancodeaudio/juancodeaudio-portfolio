@@ -11,7 +11,7 @@ import Link from 'next/link'
 
 export default function Home() {
 
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
   useEffect( () => {
     (
@@ -19,11 +19,11 @@ export default function Home() {
         const LocomotiveScroll = (await import('locomotive-scroll')).default
         const locomotiveScroll = new LocomotiveScroll();
 
-        setTimeout( () => {
-          setIsLoading(false);
-          document.body.style.cursor = 'default'
-          window.scrollTo(0,0);
-        }, 2000)
+        // setTimeout( () => {
+        //   setIsLoading(false);
+        //   document.body.style.cursor = 'default'
+        //   window.scrollTo(0,0);
+        // }, 2000)
       }
     )()
   }, [])
@@ -49,7 +49,7 @@ export default function Home() {
       <WidthLayout>  
           <Landing />
           <DescriptionLanding />
-          <ProjectsGallery imageSize='lg' />
+          <ProjectsGallery />
           <div className='w-screen bg-background py-16 md:py-24 flex justify-center'>
             <Link href='/projects' >
               <Button buttonColor="light" variant="bordered" hoverColor='bg-primary'>More projects</Button>
