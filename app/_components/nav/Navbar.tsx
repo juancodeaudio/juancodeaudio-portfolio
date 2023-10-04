@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import WidthLayout from '@/common/WidthLayout'
-import Logo from '@/common/Logo'
+import { Logo } from '@/common/icons'
 // import ThemeButton from '@/components/nav/ThemeButton'
 import MagneticComponent from '@/common/MagneticComponent'
 import Menu from '@/components/nav/Menu'
@@ -56,7 +56,7 @@ const Navbar = () => {
       <WidthLayout>
         <div className='flex items-center h-full justify-between'>
           <nav className='flex group items-center justify-center gap-2'>
-            <Logo />
+            <Logo className='fill-foreground h-8 w-8' />
             <MagneticComponent>
               <Link aria-label='Home' href="/" className='hidden sm:flex relative overflow-hidden whitespace-nowrap ml-[5px] transition-all ease-in-out w-[150px] group-hover:w-[160px] duration-500'>
                 <p className='text-base relative transition-transform duration-500 ease-in-out pl-1 group-hover:translate-x-[-150px]'>by juancodeaudio</p>
