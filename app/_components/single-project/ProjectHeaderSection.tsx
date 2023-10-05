@@ -20,7 +20,7 @@ const ProjectHeaderSection: React.FC<Props> = ({ background, foreground, name, t
     offset: ["start end", "end start"]
   });
   const headerTitleY = useTransform(scrollYProgress, [0, 1], [40, -80])
-  const headerInfoY = useTransform(scrollYProgress, [0, 1], [-60, 50])
+  const headerInfoY = useTransform(scrollYProgress, [0, 1], [-40, 30])
 
   return (
     <motion.section
@@ -59,7 +59,7 @@ const ProjectHeaderSection: React.FC<Props> = ({ background, foreground, name, t
         style={{y: headerInfoY}}
         className="flex flex-col sm:flex-row gap-x-8 md:gap-x-16 gap-y-6"
       >
-        <div className="w-56">
+        <div className="w-full md:w-56">
           <div className={twJoin(
             "pb-2 lg:pb-5 opacity-50 border-b text-xs",
             foreground === 'dark' ? 'border-background': 'border-foreground'
@@ -68,7 +68,7 @@ const ProjectHeaderSection: React.FC<Props> = ({ background, foreground, name, t
           </div>
           <Paragraph className="tex text-sm pt-2 lg:pt-5">Tech</Paragraph>
         </div>
-        <div className="w-56">
+        <div className="w-full md:w-56">
           <div className={twJoin(
             "pb-2 lg:pb-5 opacity-50 border-b text-xs",
             foreground === 'dark' ? 'border-background': 'border-foreground'
@@ -86,7 +86,7 @@ const ProjectHeaderSection: React.FC<Props> = ({ background, foreground, name, t
             ))}
           </div>
         </div>
-        <div className="w-56">
+        <div className="w-full md:w-56">
           <div className={twJoin(
             "pb-2 lg:pb-5 opacity-50 border-b text-xs",
             foreground === 'dark' ? 'border-background': 'border-foreground'

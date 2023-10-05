@@ -10,22 +10,22 @@ import { columnProps } from '@/lib/types';
 
 const columnProjects = [
   [
-    { imageSrc: projects[0].src, projectUrl: projects[0].slug, videoSrc: projects[0].videos[0] },
+    { imageSrc: projects[0].altImages[1], projectUrl: projects[0].slug, videoSrc: projects[0].videos[1] },
     { imageSrc: projects[1].altImages[0], projectUrl: projects[1].slug, videoSrc: projects[1].videos[0] },
-    { imageSrc: projects[5].src, projectUrl: projects[5].slug, videoSrc: projects[5].videos[0] },
-    { imageSrc: projects[4].src, projectUrl: projects[4].slug, videoSrc: projects[4].videos[0] }
+    { imageSrc: projects[3].src, projectUrl: projects[3].slug, videoSrc: projects[3].videos[1] },
+    { imageSrc: projects[2].altImages[1], projectUrl: projects[2].slug, videoSrc: projects[2].videos[1] }
   ],
   [
-    { imageSrc: projects[4].altImages[0], projectUrl: projects[4].slug, videoSrc: projects[4].videos[0] },
+    { imageSrc: projects[0].altImages[2], projectUrl: projects[0].slug, videoSrc: projects[0].videos[1] },
     { imageSrc: projects[2].src, projectUrl: projects[2].slug, videoSrc: projects[2].videos[0] },
     { imageSrc: projects[3].src, projectUrl: projects[3].slug, videoSrc: projects[3].videos[0] },
-    { imageSrc: projects[5].altImages[0], projectUrl: projects[5].slug, videoSrc: projects[5].videos[0] }
+    { imageSrc: projects[1].altImages[0], projectUrl: projects[1].slug, videoSrc: projects[1].videos[1] }
   ],
   [
-    { imageSrc: projects[2].src, projectUrl: projects[2].slug, videoSrc: projects[2].videos[0] },
-    { imageSrc: projects[3].src, projectUrl: projects[3].slug, videoSrc: projects[3].videos[1] },
-    { imageSrc: projects[0].altImages[0], projectUrl: projects[0].slug, videoSrc: projects[0].videos[0] },
-    { imageSrc: projects[1].src, projectUrl: projects[1].slug, videoSrc: projects[1].videos[0] }
+    { imageSrc: projects[2].src, projectUrl: projects[2].slug, videoSrc: projects[2].videos[1] },
+    { imageSrc: projects[3].altImages[1], projectUrl: projects[3].slug, videoSrc: projects[3].videos[1] },
+    { imageSrc: projects[0].src, projectUrl: projects[0].slug, videoSrc: projects[0].videos[0] },
+    { imageSrc: projects[1].altImages[1], projectUrl: projects[1].slug, videoSrc: projects[1].videos[1] }
   ]
 ]
 

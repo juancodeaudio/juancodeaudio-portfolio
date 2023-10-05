@@ -24,7 +24,7 @@ const ImageProjectSection: React.FC<Props> = ({ secondBackground, slug, altImage
       <div ref={ref} className={`h-full w-full md:w-1/2 flex justify-center ${secondBackground} py-28 md:py-48 px-5`}>
         <motion.div style={{y}}>
           <Image
-            src={`/images/projects/${slug}/${altImages[0]}`}
+            src={`/images/projects/${slug}/${altImages[1]}`}
             className="shadow-lg shadow-background/30 rounded-lg"
             alt={slug}
             width={600}
@@ -35,7 +35,7 @@ const ImageProjectSection: React.FC<Props> = ({ secondBackground, slug, altImage
       <div className={`h-full w-full md:w-1/2 flex justify-center ${background} py-28 md:py-48 px-5`}>
         <motion.div style={{y}}>
           <Image
-            src={`/images/projects/${slug}/${altImages[0]}`}
+            src={`/images/projects/${slug}/${altImages[2]}`}
             className="shadow-lg shadow-background/30 rounded-lg"
             alt={slug}
             width={600}

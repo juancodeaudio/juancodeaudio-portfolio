@@ -41,7 +41,7 @@ const ProjectMainVideo: React.FC<Props> = ({ videos, slug, src, info }) => {
         <motion.video
           style={{y: y}}
           src={videos[0] ? `/images/projects/${slug}/${videos[0]}` : undefined}
-          poster={`/images/projects/${slug}/${src}`}
+          // poster={`/images/projects/${slug}/${src}`}
           className='bg-background'
           width={1300}
           height={400}
