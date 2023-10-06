@@ -19,7 +19,7 @@ const TechSection = () => {
   const opacity = useTransform(
     scrollYProgress,
     [0, 0.2],
-    [0.4, 1]
+    [0.3, 0.5]
   );
 
   const text1Opacity = useTransform(
