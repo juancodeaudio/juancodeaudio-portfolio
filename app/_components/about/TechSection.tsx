@@ -147,7 +147,7 @@ const TechSection = () => {
           className="translate-y-centered-offset absolute top-1/2 left-0 w-full lg:w-2/3 px-14"
         >
           <Title2 className="uppercase" text="WEB" />
-          <Paragraph>Access and complete any action in seconds with the command palette.</Paragraph>
+          <Paragraph>I possess a strong skill set in full-stack web development, with experience in technologies like NEXT.js, TypeScript, and Node.js. These capabilities enable me to create robust and dynamic web applications, focusing on user experience and performance optimization</Paragraph>
           <motion.div className="flex mt-5" style={{gap: gap2}}>
             <div className="h-10 w-10">
               <TSIcon />
@@ -174,7 +174,7 @@ const TechSection = () => {
           className="translate-y-centered-offset absolute top-1/2 left-0 w-full lg:w-2/3 px-14"
         >
           <Title2 className="uppercase" text="Media" />
-          <Paragraph>We´ve bundled useful tools to help you get your work done faster andmore efficiently.</Paragraph>
+          <Paragraph>With my studies in audio engineering and my experience in video production, I am capable of creating complete and outstanding audiovisual projects. I achieve this through industry-standard tools such as Logic Pro X, ProTools, DaVinci Resolve, Final Cut Pro, and many more</Paragraph>
           <motion.div className="flex mt-5" style={{gap: gap3}}>
             <div className="h-10 w-10">
               <ProToolsIcon />
@@ -201,7 +201,7 @@ const TechSection = () => {
           className="translate-y-centered-offset absolute top-1/2 left-0 w-full lg:w-2/3 px-14"
         >
           <Title2 className="uppercase" text="Design" />
-          <Paragraph>We´ve bundled useful tools to help you get your work done faster andmore efficiently.</Paragraph>
+          <Paragraph>I have a wide range of web design skills, including expertise in software such as Figma, Affinity Designer, and Photoshop. These proficiencies enable me to craft visually appealing and user-friendly designs for various digital platforms, including websites and mobile applications</Paragraph>
           <motion.div className="flex mt-5" style={{gap: gap4}}>
             <div className="h-10 w-10">
               <FaFigma className="h-full w-full fill-foreground/60" />
